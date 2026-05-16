@@ -10,7 +10,16 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
 
-
+window.addEventListener('load', () => {
+   try {
+      if (window.Telegram?.WebApp) {
+         Telegram.WebApp.ready();
+         Telegram.WebApp.expand();
+      }
+   } catch(e) {
+      console.log(e);
+   }
+});
 <!-- Monetag SDK loader (Zone ID টি Firebase থেকে লোড হয়) -->
 <script>
 function loadMoneytag(zoneId) {
