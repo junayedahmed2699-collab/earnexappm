@@ -262,12 +262,15 @@ select.fi option{background:#1a1d26}
   </div>
   <div class="wcard">
     <div class="wchd"><div class="wctitle">📺 বিজ্ঞাপন দেখে আয় করুন</div><div class="wcrb" id="wcRB">+৳ 0.50</div></div>
-    <div class="wcinfo">
-      <div class="wcstat" style="display:none"><div class="wcsv" id="wcAds">0</div><div class="wcsl">Ads / session</div></div>
-      <div class="wcstat"><div class="wcsv" id="wcToday">0</div><div class="wcsl">Watched today</div></div>
-      <div class="wcstat"><div class="wcsv" id="wcLimit">5</div><div class="wcsl">Daily limit</div></div>
-    </div>
-    <button class="bigbtn watchbtn" id="watchBtn" onclick="startChain('watch')">▶ বিজ্ঞাপন দেখুন</button>
+    <div class="wcinfo" style="display:none">
+  <div class="wcstat" style="display:none"><div class="wcsv" id="wcAds">0</div><div class="wcsl">Ads / session</div></div>
+  <div class="wcstat" style="display:none"><div class="wcsv" id="wcToday">0</div><div class="wcsl">Watched today</div></div>
+  <div class="wcstat" style="display:none"><div class="wcsv" id="wcLimit">5</div><div class="wcsl">Daily limit</div></div>
+</div>
+<div style="background:rgba(255,200,74,.08);border:1px solid rgba(255,200,74,.2);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.8;font-family:'Hind Siliguri',sans-serif;text-align:center">
+  📺 নিচের বাটনে ক্লিক করুন এবং বিজ্ঞাপন দেখুন।<br>প্রতিটি বিজ্ঞাপন দেখা শেষ হলে স্বয়ংক্রিয়ভাবে টাকা যোগ হবে।
+</div>
+<button class="bigbtn watchbtn" id="watchBtn" onclick="startChain('watch')">▶ বিজ্ঞাপন দেখুন</button>
     <div class="cooldown-bar-wrap" id="cooldownBarWrap"><div class="cooldown-bar" id="cooldownBar" style="width:100%"></div></div>
     <div class="limit-info"><span class="limit-txt">Today's progress</span><span class="limit-val" id="limitProgress">0 / 5</span></div>
   </div>
