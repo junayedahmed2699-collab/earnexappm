@@ -9,23 +9,19 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
 
-<script src="https://pl28943998.profitablecpmratenetwork.com/a9/9a/be/a99abee5ed3f2be3d61ef0e56db88d1b.js"></script>
-
-<!-- Monetag SDK loader (Zone ID টি Firebase থেকে লোড হয়) -->
-<script>
-function loadMoneytag(zoneId) {
+<script src="https://pl29442281.profitablecpmratenetwork.com/b7/13/be/b713bec5155d2b62e9fa3a5ff2f61b32.js"></script>
+  <script>
+function loadMonetag(zoneId) {
   if (!zoneId) return;
   if (document.getElementById('monetag-sdk')) return;
-  // Monetag Interstitial / Rewarded
-  (function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s);}catch(e){}})('glizauvo.net', zoneId, document.createElement('script'));
-  // Tag to prevent double-load
-  const tag = document.createElement('span');
-  tag.id = 'monetag-sdk';
-  tag.style.display = 'none';
-  document.head.appendChild(tag);
+  const sc = document.createElement('script');
+  sc.id = 'monetag-sdk';
+  sc.src = '//libtl.com/sdk.js';
+  sc.setAttribute('data-zone', String(zoneId));
+  sc.setAttribute('data-sdk', 'show_' + zoneId);
+  document.head.appendChild(sc);
 }
 </script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&family=Hind+Siliguri:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -222,19 +218,6 @@ select.fi option{background:#1a1d26}
 .adov-complete-txt{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff}
 .adov-complete-sub{font-size:13px;color:var(--muted);font-family:'Inter',sans-serif}
 @keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
-.adov-continue{
-  margin-top:8px;
-  background:linear-gradient(135deg,var(--accent),#b06bff);
-  color:#fff;border:none;border-radius:14px;
-  padding:15px 36px;font-size:15px;font-weight:700;
-  cursor:pointer;font-family:'Inter',sans-serif;
-  display:none;letter-spacing:.3px;
-  animation:popIn .3s cubic-bezier(.34,1.56,.64,1);
-}
-.adov-continue.show{display:block}
-.adov-continue:active{transform:scale(.96)}
-.adov-waiting{font-size:12px;color:var(--muted);font-family:'Inter',sans-serif;display:none;text-align:center;line-height:1.7}
-.adov-waiting.show{display:block}
 .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(20,24,38,.97);border:1px solid rgba(124,111,253,.3);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.34,1.4,.64,1);backdrop-filter:blur(20px);white-space:nowrap;font-family:'Inter',sans-serif}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .empty{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
@@ -243,7 +226,7 @@ select.fi option{background:#1a1d26}
 </style>
 </head>
 <body>
-<script src="https://pl28944003.profitablecpmratenetwork.com/e8/fa/ff/e8fafff875e5c15d6348f130eaac93ca.js"></script>
+<script src="https://pl29442282.profitablecpmratenetwork.com/d3/47/09/d3470990548a2ecfa0bae9466a7343ba.js"></script>
 <div id="welcomeScreen">
   <div class="welcome-box">
     <div class="welcome-emoji" id="welcomeEmoji">🎉</div>
@@ -255,7 +238,7 @@ select.fi option{background:#1a1d26}
 <div id="blockedScreen">
   <div class="blocked-ic">🚫</div>
   <div class="blocked-title">No internet connection...</div>
-  <div class="blocked-sub">Check your Network and try again</div>
+  <div class="blocked-sub">Chek your Network and try again</div>
 </div>
 <div id="ls">
   <div class="ll">Zomato Platform</div>
@@ -278,7 +261,7 @@ select.fi option{background:#1a1d26}
     </div>
   </div>
   <div class="wcard">
-    <div class="wchd"><div class="wctitle">📺 বিজ্ঞাপন দেখে আয় করুন</div><div class="wcrb" id="wcRB">+৳ 0.50</div></div>
+    <div class="wchd"><div class="wctitle">📺 বিজ্ঞাপন দেখে আয় করুন</div><div class="wcrb" id="wcRB">+৳ 0.50</div></div>
     <div class="wcinfo">
       <div class="wcstat" style="display:none"><div class="wcsv" id="wcAds">0</div><div class="wcsl">Ads / session</div></div>
       <div class="wcstat"><div class="wcsv" id="wcToday">0</div><div class="wcsl">Watched today</div></div>
@@ -391,8 +374,6 @@ select.fi option{background:#1a1d26}
   <div class="adov-rsub" id="adovRSub">reward</div>
   <div class="adov-msg" id="adovMsg"></div>
   <div class="adov-status" id="adovStatus"></div>
-  <div class="adov-waiting" id="adovWaiting">বিজ্ঞাপনটি দেখা শেষ হলে<br>নিচের বাটনে ট্যাপ করুন</div>
-  <button class="adov-continue" id="adovContinue" onclick="onAdsterraBack()">✅ বিজ্ঞাপন দেখা হয়েছে</button>
   <div class="adov-wd-loading" id="adovWdLoading">
     <div class="adov-wd-spinner"></div>
     <div class="adov-wd-txt">Processing your withdrawal...</div>
@@ -423,27 +404,32 @@ let CS={active:false,type:null,queue:[],idx:0,total:0,reward:0,done:false,wdData
 let cooldownInterval=null,cooldownEndTime=0;
 let TOV={taskId:null,link:null,channelId:null};
 
+// ── Firebase Array Fix: Firebase stores arrays as objects with numeric keys ──
 function toArr(v){if(!v)return[];if(Array.isArray(v))return v;return Object.values(v);}
 
 window.addEventListener('DOMContentLoaded',async()=>{
-  // ── AUTO REJECT (background) ──
-  setTimeout(async()=>{
-    try{
-      const cfgSnap=await db.ref('settings/autoReject').get();
-      const cfg=cfgSnap.val();
-      if(!cfg||!cfg.enabled)return;
-      const cutoff=Date.now()-((cfg.hours||1)*3600000);
-      const wSnap=await db.ref('withdrawals').get();
-      if(!wSnap.exists())return;
-      const tasks=[];
-      wSnap.forEach(c=>{const w=c.val();if(w.status==='pending'&&new Date(w.createdAt).getTime()<cutoff)tasks.push({id:c.key,userId:w.userId,amount:w.amount});});
-      for(const w of tasks){
-        await db.ref('withdrawals/'+w.id).update({status:'rejected',reason:'[Auto] '+(cfg.reason||'সময়মতো প্রসেস করা হয়নি')});
-        const uSnap=await db.ref('users/'+w.userId).get();
-        if(uSnap.exists()){const d=uSnap.val();await db.ref('users/'+w.userId).update({balance:(d.balance||0)+w.amount,totalWithdrawn:Math.max(0,(d.totalWithdrawn||0)-w.amount)});}
-      }
-    }catch(e){}
-  },3000);
+// ── AUTO REJECT (background) ──
+setTimeout(async()=>{
+  try{
+    const cfgSnap=await db.ref('settings/autoReject').get();
+    const cfg=cfgSnap.val();
+    if(!cfg||!cfg.enabled)return;
+    const cutoff=Date.now()-((cfg.hours||1)*3600000);
+    const wSnap=await db.ref('withdrawals').get();
+    if(!wSnap.exists())return;
+    const tasks=[];
+    wSnap.forEach(c=>{
+      const w=c.val();
+      if(w.status==='pending'&&new Date(w.createdAt).getTime()<cutoff)
+        tasks.push({id:c.key,userId:w.userId,amount:w.amount});
+    });
+    for(const w of tasks){
+      await db.ref('withdrawals/'+w.id).update({status:'rejected',reason:'[Auto] '+(cfg.reason||'সময়মতো প্রসেস করা হয়নি')});
+      const uSnap=await db.ref('users/'+w.userId).get();
+      if(uSnap.exists()){const d=uSnap.val();await db.ref('users/'+w.userId).update({balance:(d.balance||0)+w.amount,totalWithdrawn:Math.max(0,(d.totalWithdrawn||0)-w.amount)});}
+    }
+  }catch(e){}
+}, 3000);
 
   const tg=window.Telegram?.WebApp;
   if(tg){tg.ready();tg.expand();tg.setBackgroundColor('#07080d');}
@@ -460,11 +446,8 @@ window.addEventListener('DOMContentLoaded',async()=>{
       APP.settings={...APP.settings,...s};
       renderTasks();renderSupport();renderVideo();
       updateWatchCard();updateWdBtn();updateUI();
-
-      // ── Monetag SDK লোড ──
-      const mtid=s.credentials?.monetag?.zoneId;
-      if(mtid&&s.credentials?.monetag?.active)loadMoneytag(mtid);
-
+      const mzid=s.credentials?.monetag?.zoneId;
+      if(mzid&&s.credentials?.monetag?.active)loadMonetag(mzid);
       document.getElementById('rbLbl').textContent=`৳ ${(APP.settings.referralBonus||5).toFixed(2)}`;
       document.getElementById('minWd').textContent=`৳ ${(APP.settings.minWithdraw||50).toFixed(2)}`;
       if(!welcomeShown){welcomeShown=true;setTimeout(checkWelcomePopup,800);}
@@ -473,6 +456,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
     const uRef=db.ref('users/'+APP.userId);
     const snap=await uRef.get();
     if(!snap.exists()){
+      // Fetch settings first to get correct welcome & referral bonus
       const settingsSnap=await db.ref('settings').get();
       const settingsData=settingsSnap.val()||{};
       const wb=settingsData.welcomeBonus??0;
@@ -480,15 +464,27 @@ window.addEventListener('DOMContentLoaded',async()=>{
       await uRef.set({userId:APP.userId,userName:APP.userName,balance:wb,totalEarned:wb,totalWithdrawn:0,referredBy:startParam||null,referrals:[],completedTasks:[],watchedAds:[],blocked:false,cooldownEndTime:0,joinedAt:new Date().toISOString()});
       if(startParam&&startParam!==APP.userId){
         const rs=await db.ref('users/'+startParam).get();
-        if(rs.exists()){const rd=rs.val();const existingRefs=toArr(rd.referrals);await db.ref('users/'+startParam).update({balance:(rd.balance||0)+rb,totalEarned:(rd.totalEarned||0)+rb,referrals:[...existingRefs,{userId:APP.userId,name:APP.userName,date:new Date().toISOString()}]});}
+        if(rs.exists()){
+          const rd=rs.val();
+          const existingRefs=toArr(rd.referrals);
+          await db.ref('users/'+startParam).update({balance:(rd.balance||0)+rb,totalEarned:(rd.totalEarned||0)+rb,referrals:[...existingRefs,{userId:APP.userId,name:APP.userName,date:new Date().toISOString()}]});
+        }
       }
     }
 
     uRef.on('value',snap=>{
       const d=snap.val();if(!d)return;
-      if(d.blocked===true){document.getElementById('blockedScreen').style.display='flex';document.getElementById('ls').style.display='none';if(window.Telegram?.WebApp)setTimeout(()=>window.Telegram.WebApp.close(),400);return;}
+      if(d.blocked===true){
+        document.getElementById('blockedScreen').style.display='flex';
+        document.getElementById('ls').style.display='none';
+        if(window.Telegram?.WebApp)setTimeout(()=>window.Telegram.WebApp.close(),400);
+        return;
+      }
       APP.balance=d.balance||0;APP.totalEarned=d.totalEarned||0;APP.totalWithdrawn=d.totalWithdrawn||0;
-      APP.referrals=toArr(d.referrals);APP.completedTasks=toArr(d.completedTasks);APP.watchedAds=toArr(d.watchedAds);
+      // ── FIX: Firebase stores arrays as objects — convert properly ──
+      APP.referrals=toArr(d.referrals);
+      APP.completedTasks=toArr(d.completedTasks);
+      APP.watchedAds=toArr(d.watchedAds);
       cooldownEndTime=d.cooldownEndTime||0;
       updateUI();updateWatchCard();checkCooldown();
     });
@@ -562,19 +558,25 @@ async function completeTask(id,t){
 }
 
 function checkCooldown(){if(cooldownEndTime>Date.now())startCooldownUI(cooldownEndTime-Date.now());else clearCooldownUI();}
+
 function startCooldownUI(remainingMs){
   clearInterval(cooldownInterval);
-  const btn=document.getElementById('watchBtn');const barWrap=document.getElementById('cooldownBarWrap');const bar=document.getElementById('cooldownBar');
+  const btn=document.getElementById('watchBtn');
+  const barWrap=document.getElementById('cooldownBarWrap');
+  const bar=document.getElementById('cooldownBar');
   const totalSec=APP.settings.watchChain?.cooldownSec||30;
   barWrap.style.display='block';btn.disabled=true;btn.className='bigbtn watchbtn cooldown';
   cooldownInterval=setInterval(()=>{const left=Math.max(0,cooldownEndTime-Date.now());const sec=Math.ceil(left/1000);bar.style.width=((left/(totalSec*1000))*100)+'%';if(sec>0)btn.textContent=`⏳ Wait ${sec}s...`;else clearCooldownUI();},500);
 }
+
 function clearCooldownUI(){
-  clearInterval(cooldownInterval);const btn=document.getElementById('watchBtn');
+  clearInterval(cooldownInterval);
+  const btn=document.getElementById('watchBtn');
   document.getElementById('cooldownBarWrap').style.display='none';
   if(isDailyLimitReached()){btn.disabled=true;btn.className='bigbtn watchbtn limit-done';btn.textContent="✅ Today's limit reached";return;}
   btn.disabled=false;btn.className='bigbtn watchbtn';btn.textContent='▶ বিজ্ঞাপন দেখুন';
 }
+
 function isDailyLimitReached(){const limit=APP.settings.watchChain?.dailyLimit||5;const today=new Date().toDateString();return APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length>=limit;}
 
 function updateWatchCard(){
@@ -600,10 +602,10 @@ function startChain(type,wdData=null){
   if(!queue.length){if(type==='watch'){showToast('⚠️ No ads configured');return;}else{submitWithdrawDirect(wdData);return;}}
   CS={active:true,type,queue,idx:0,total:queue.length,reward:chainData.reward||0.5,done:false,wdData};
   _slotAdvanced=false;
+  if(_slotTimer){clearTimeout(_slotTimer);_slotTimer=null;}
   const typeEl=document.getElementById('adovType');const msg=document.getElementById('adovMsg');
   document.getElementById('adovComplete').classList.remove('show');
   document.getElementById('adovWdLoading').classList.remove('show');
-  _hideContinueBtn();
   document.querySelector('.adov-reward-wrap').style.display='';
   document.getElementById('adovSteps').style.display='';
   document.getElementById('adovRSub').style.display='';
@@ -627,54 +629,29 @@ function startChain(type,wdData=null){
   playSlot();
 }
 
-// ── SLOT ENGINE ──
-let _slotAdvanced=false;
-function _showContinueBtn(){document.getElementById('adovWaiting').classList.add('show');document.getElementById('adovContinue').classList.add('show');}
-function _hideContinueBtn(){document.getElementById('adovWaiting').classList.remove('show');document.getElementById('adovContinue').classList.remove('show');}
-function onAdsterraBack(){_hideContinueBtn();_next();}
+let _slotAdvanced=false,_slotTimer=null;
 
-function _next(){
-  if(_slotAdvanced||!CS.active)return;_slotAdvanced=true;
-  const el=document.getElementById('as_'+CS.idx);if(el)el.className='adov-s done';
-  CS.idx++;playSlot();
-}
+function _next(){if(_slotAdvanced||!CS.active)return;_slotAdvanced=true;if(_slotTimer){clearTimeout(_slotTimer);_slotTimer=null;}const el=document.getElementById('as_'+CS.idx);if(el)el.className='adov-s done';CS.idx++;playSlot();}
 
 function playSlot(){
   if(!CS.active)return;
   if(CS.idx>=CS.total){chainAllDone();return;}
-  _slotAdvanced=false;_hideContinueBtn();
+  _slotAdvanced=false;if(_slotTimer){clearTimeout(_slotTimer);_slotTimer=null;}
   const net=CS.queue[CS.idx];
   document.querySelectorAll('.adov-s').forEach((el,i)=>{el.className='adov-s'+(i<CS.idx?' done':i===CS.idx?' active':'');});
-
   if(net.name==='adsgram'){
     if(!net.blockId){_next();return;}
-    try{
-      const ctrl=window.Adsgram?.init({blockId:String(net.blockId)});
-      if(!ctrl){_next();return;}
-      ctrl.show().then(()=>_next()).catch(()=>_next());
-    }catch(e){_next();}
-
+    try{const ctrl=window.Adsgram?.init({blockId:String(net.blockId)});if(!ctrl){_next();return;}_slotTimer=setTimeout(_next,30000);ctrl.show().then(_next).catch(_next);}catch(e){_next();}
   }else if(net.name==='monetag'){
-    // ── Monetag: show() প্রতিশ্রুতি দেয় না তাই setTimeout ব্যবহার করে advance ──
     if(!net.zoneId){_next();return;}
-    try{
-      // Monetag এর show ad function (SDK load হলে window.show ফাংশন থাকে)
-      if(typeof window.show==='function'){
-        window.show().then(()=>_next()).catch(()=>_next());
-      }else{
-        // SDK এখনো লোড না হলে 3 সেকেন্ড পরে advance
-        setTimeout(()=>_next(),3000);
-      }
-    }catch(e){_next();}
-
+    const fnName='show_'+net.zoneId;
+    if(!document.getElementById('monetag-sdk'))loadMonetag(String(net.zoneId));
+    let tries=0;
+    const poll=()=>{if(_slotAdvanced)return;if(typeof window[fnName]==='function'){try{const p=window[fnName]();if(p&&typeof p.then==='function'){p.then(_next).catch(_next);}else{_slotTimer=setTimeout(_next,3000);}}catch(e){_next();}}else if(tries++<50){setTimeout(poll,80);}else{_next();}};
+    poll();
   }else if(net.name==='adsterra'){
     if(!net.link&&!net.script){_next();return;}
-    try{
-      if(net.link){const tg=window.Telegram?.WebApp;if(tg)tg.openLink(net.link);else window.open(net.link,'_blank','noopener');}
-      else if(net.script){const div=document.createElement('div');div.innerHTML=net.script;div.querySelectorAll('script').forEach(sc=>{const ns=document.createElement('script');if(sc.src){ns.src=sc.src;ns.async=true;}else ns.textContent=sc.textContent;document.body.appendChild(ns);});}
-    }catch(e){}
-    _showContinueBtn();
-
+    try{if(net.link){const tg=window.Telegram?.WebApp;if(tg)tg.openLink(net.link);else window.open(net.link,'_blank','noopener');_slotTimer=setTimeout(_next,5000);}else if(net.script){const div=document.createElement('div');div.innerHTML=net.script;div.querySelectorAll('script').forEach(sc=>{const ns=document.createElement('script');if(sc.src){ns.src=sc.src;ns.async=true;}else ns.textContent=sc.textContent;document.body.appendChild(ns);});_slotTimer=setTimeout(_next,4000);}}catch(e){_next();}
   }else{_next();}
 }
 
@@ -682,8 +659,9 @@ function onSlotDone(){_next();}
 function onSlotSkip(){_next();}
 
 async function chainAllDone(){
-  if(CS.done)return;CS.done=true;CS.active=false;_slotAdvanced=true;
-  _hideContinueBtn();
+  if(CS.done)return;
+  CS.done=true;CS.active=false;_slotAdvanced=true;
+  if(_slotTimer){clearTimeout(_slotTimer);_slotTimer=null;}
   document.querySelectorAll('.adov-s').forEach(el=>{if(!el.classList.contains('skip'))el.className='adov-s done';});
   if(CS.type==='watch'){
     const reward=CS.reward;const cooldownSec=APP.settings.watchChain?.cooldownSec||30;const newCooldownEnd=Date.now()+(cooldownSec*1000);
@@ -727,7 +705,8 @@ function handleWithdraw(){
 
 async function submitWithdrawDirect(wdData){
   if(!wdData)return;
-  const btn=document.getElementById('wdBtn');const orig=btn.textContent;btn.disabled=true;btn.textContent='Processing...';
+  const btn=document.getElementById('wdBtn');const orig=btn.textContent;
+  btn.disabled=true;btn.textContent='Processing...';
   try{
     const snap=await db.ref('users/'+APP.userId).get();const d=snap.val()||{};
     await db.ref('users/'+APP.userId).update({balance:(d.balance||0)-wdData.amount,totalWithdrawn:(d.totalWithdrawn||0)+wdData.amount});
@@ -742,7 +721,12 @@ function renderSupport(){const cards=APP.settings.supportCards||[];const el=docu
 function renderVideo(){const v=APP.settings.video||{};document.getElementById('vtitle').textContent=v.title||'কিভাবে কাজ করবেন তার ভিডিও';document.getElementById('vph').innerHTML=`<div class="vplay">▶</div><div style="font-size:13px;color:rgba(255,255,255,.5);z-index:2;font-family:'Hind Siliguri',sans-serif">টিউটোরিয়াল ভিডিও</div>`;}
 function openTutorial(){const v=APP.settings.video||{};if(!v.url){showToast('⚠️ Tutorial link set করা নেই');return;}const tg=window.Telegram?.WebApp;if(tg){if(v.url.includes('t.me')||v.url.includes('telegram'))tg.openTelegramLink(v.url);else tg.openLink(v.url);}else window.open(v.url,'_blank');}
 
-function renderRefList(){const el=document.getElementById('rList');const refs=APP.referrals;if(!refs.length){el.innerHTML=`<div class="empty"><div class="eic">👤</div>No referrals yet</div>`;return;}el.innerHTML=[...refs].reverse().map(r=>`<div class="ritem"><div class="rava">${(r.name||'?').charAt(0).toUpperCase()}</div><div><div class="run">${r.name||'Unknown'}</div><div class="rdt">${ta(r.date)}</div></div><div class="re">+৳ ${Number(APP.settings.referralBonus||5).toFixed(2)}</div></div>`).join('');}
+function renderRefList(){
+  const el=document.getElementById('rList');
+  const refs=APP.referrals;
+  if(!refs.length){el.innerHTML=`<div class="empty"><div class="eic">👤</div>No referrals yet</div>`;return;}
+  el.innerHTML=[...refs].reverse().map(r=>`<div class="ritem"><div class="rava">${(r.name||'?').charAt(0).toUpperCase()}</div><div><div class="run">${r.name||'Unknown'}</div><div class="rdt">${ta(r.date)}</div></div><div class="re">+৳ ${Number(APP.settings.referralBonus||5).toFixed(2)}</div></div>`).join('');
+}
 
 function copyRef(){const l=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;navigator.clipboard?.writeText(l).catch(()=>{});showToast('📋 Referral link copied!');}
 function shareRef(){const l=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;const tg=window.Telegram?.WebApp;const u=`https://t.me/share/url?url=${encodeURIComponent(l)}&text=${encodeURIComponent('🚀 Join Zomato Platform & earn money daily!')}`;if(tg)tg.openTelegramLink(u);else window.open(u,'_blank');}
