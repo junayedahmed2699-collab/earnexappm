@@ -3,133 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Earnexo</title>
+<title>Zomato Platform</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
-
-<script src="https://pl29442281.profitablecpmratenetwork.com/b7/13/be/b713bec5155d2b62e9fa3a5ff2f61b32.js"></script>
-  <script>
-function loadMonetag(zoneId) {
-  if (!zoneId) return;
-  if (document.getElementById('monetag-sdk')) return;
-  const sc = document.createElement('script');
-  sc.id = 'monetag-sdk';
-  sc.src = '//libtl.com/sdk.js';
-  sc.setAttribute('data-zone', String(zoneId));
-  sc.setAttribute('data-sdk', 'show_' + zoneId);
+<script src="https://pl28943998.profitablecpmratenetwork.com/a9/9a/be/a99abee5ed3f2be3d61ef0e56db88d1b.js"></script>
+<script>
+function loadGigaPub(scriptId){
+  if(!scriptId)return;
+  if(document.getElementById('gigapub-sdk'))return;
+  const sc=document.createElement('script');
+  sc.id='gigapub-sdk';
+  sc.src='https://ad.gigapub.tech/script?id='+scriptId;
   document.head.appendChild(sc);
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&family=Hind+Siliguri:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07080d;--bg2:#0f111a;--bg3:#171a26;--card:#111420;
-  --border:rgba(255,255,255,0.07);--accent:#7c6ffd;
-  --as:rgba(124,111,253,0.12);--green:#00e096;--gs:rgba(0,224,150,0.12);
-  --yellow:#ffc84a;--ys:rgba(255,200,74,0.12);--red:#ff5f5f;
-  --rs:rgba(255,95,95,0.12);--text:#e2e4ef;--muted:#5a6280;--taka:#ffc84a;
+  --bg:#100800;
+  --bg2:#1a0e00;
+  --bg3:#221500;
+  --card:#1c1000;
+  --border:rgba(255,140,0,0.13);
+  --border2:rgba(255,140,0,0.25);
+  --accent:#ff7a1a;
+  --accent2:#ffb347;
+  --as:rgba(255,122,26,0.13);
+  --green:#3ecf8e;
+  --gs:rgba(62,207,142,0.12);
+  --yellow:#ffc84a;
+  --ys:rgba(255,200,74,0.12);
+  --red:#ff5f5f;
+  --rs:rgba(255,95,95,0.12);
+  --text:#f0dfc0;
+  --muted:#7a5c3a;
+  --taka:#ffb347;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;padding-bottom:90px;font-size:14px}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;padding-bottom:90px;font-size:14px}
 ::-webkit-scrollbar{display:none}
-#welcomeScreen{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99998;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px)}
+
+/* ── WELCOME ── */
+#welcomeScreen{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99998;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px)}
 #welcomeScreen.open{display:flex}
-.welcome-box{background:linear-gradient(145deg,#0f111a,#171a2e);border:1px solid rgba(124,111,253,.3);border-radius:24px;padding:32px 24px;width:100%;max-width:380px;text-align:center;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
-.welcome-box::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(124,111,253,.15),transparent 70%)}
+.welcome-box{background:linear-gradient(145deg,#1a0e00,#2a1a00);border:1px solid rgba(255,140,0,.3);border-radius:24px;padding:32px 24px;width:100%;max-width:380px;text-align:center;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
+.welcome-box::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,26,.15),transparent 70%)}
 .welcome-emoji{font-size:56px;margin-bottom:12px;position:relative;z-index:1}
-.welcome-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;position:relative;z-index:1}
+.welcome-title{font-family:'Baloo Da 2',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;position:relative;z-index:1}
 .welcome-msg{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px;position:relative;z-index:1}
-.welcome-btn{width:100%;background:linear-gradient(135deg,var(--accent),#b06bff);color:#fff;border:none;border-radius:14px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;position:relative;z-index:1}
+.welcome-btn{width:100%;background:linear-gradient(135deg,#c43a00,#ff7a1a);color:#fff;border:none;border-radius:14px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;transition:all .2s;position:relative;z-index:1}
 .welcome-btn:active{transform:scale(.97)}
+
+/* ── BLOCKED ── */
 #blockedScreen{position:fixed;inset:0;background:var(--bg);z-index:99999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px}
 .blocked-ic{font-size:64px}
-.blocked-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--red);text-align:center}
+.blocked-title{font-family:'Baloo Da 2',sans-serif;font-size:22px;font-weight:800;color:var(--red);text-align:center}
 .blocked-sub{font-size:14px;color:var(--muted);text-align:center;line-height:1.7}
-#ls{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
-.ll{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.lsub{font-size:13px;color:var(--muted)}
-.lsp{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite}
+
+/* ── LOADER ── */
+#ls{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:#0a0400}
+.ls-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(255,100,20,.13) 0%,transparent 70%)}
+.ls-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+.ls-orb1{width:300px;height:300px;background:rgba(255,80,0,.18);top:-60px;left:-80px;animation:orbFloat1 6s ease-in-out infinite}
+.ls-orb2{width:220px;height:220px;background:rgba(255,160,30,.12);bottom:-40px;right:-60px;animation:orbFloat2 7s ease-in-out infinite}
+.ls-orb3{width:160px;height:160px;background:rgba(255,50,0,.1);bottom:30%;left:10%;animation:orbFloat3 5s ease-in-out infinite}
+@keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,20px) scale(1.1)}}
+@keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,-30px) scale(1.08)}}
+@keyframes orbFloat3{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,-20px)}}
+.ls-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,120,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,120,0,.04) 1px,transparent 1px);background-size:40px 40px;animation:gridSlide 20s linear infinite}
+@keyframes gridSlide{from{background-position:0 0}to{background-position:40px 40px}}
+.ls-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:0}
+.ls-logo-wrap{position:relative;width:100px;height:100px;margin-bottom:28px}
+.ls-hex{position:absolute;inset:0;animation:hexSpin 8s linear infinite}
+.ls-hex svg{width:100%;height:100%}
+.ls-icon-bg{position:absolute;inset:12px;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(255,140,50,.25),rgba(180,60,0,.4));display:flex;align-items:center;justify-content:center}
+.ls-icon-emoji{font-size:34px;animation:iconPulse 2s ease-in-out infinite;filter:drop-shadow(0 0 12px rgba(255,120,0,.6))}
+@keyframes iconPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes hexSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.ls-rings{position:absolute;inset:-20px;pointer-events:none}
+.ls-ring{position:absolute;border-radius:50%;border:1px solid transparent}
+.ls-ring1{inset:0;border-color:rgba(255,120,0,.35);animation:ringPulse 2s ease-in-out infinite}
+.ls-ring2{inset:-12px;border-color:rgba(255,160,50,.2);animation:ringPulse 2s ease-in-out infinite .4s}
+.ls-ring3{inset:-24px;border-color:rgba(255,200,80,.1);animation:ringPulse 2s ease-in-out infinite .8s}
+@keyframes ringPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.05)}}
+.ls-title{font-family:'Baloo Da 2',sans-serif;font-size:26px;font-weight:800;letter-spacing:1px;color:#fff;margin-bottom:4px;animation:fadeSlideUp .8s ease both .2s;opacity:0}
+.ls-title span{background:linear-gradient(135deg,#ff9a3c,#ff6a00,#ffcc44);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ls-sub{font-size:12px;color:rgba(255,180,80,.55);letter-spacing:3px;text-transform:uppercase;font-family:'Hind Siliguri',sans-serif;margin-bottom:36px;animation:fadeSlideUp .8s ease both .4s;opacity:0}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.ls-bar-wrap{width:200px;height:3px;background:rgba(255,255,255,.07);border-radius:10px;overflow:hidden;animation:fadeSlideUp .8s ease both .6s;opacity:0;margin-bottom:16px}
+.ls-bar{height:100%;width:0%;background:linear-gradient(90deg,#c43a00,#ff7a1a,#ffb347);border-radius:10px;animation:barFill 2.2s cubic-bezier(.4,0,.2,1) forwards .7s;box-shadow:0 0 10px rgba(255,120,0,.5)}
+@keyframes barFill{0%{width:0%}60%{width:75%}85%{width:90%}100%{width:100%}}
+.ls-dots{display:flex;gap:6px;animation:fadeSlideUp .8s ease both .8s;opacity:0}
+.ls-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,120,0,.4)}
+.ls-dot:nth-child(1){animation:dotBlink 1.2s ease-in-out infinite 0s}
+.ls-dot:nth-child(2){animation:dotBlink 1.2s ease-in-out infinite .2s}
+.ls-dot:nth-child(3){animation:dotBlink 1.2s ease-in-out infinite .4s}
+@keyframes dotBlink{0%,100%{background:rgba(255,120,0,.25);transform:scale(1)}50%{background:rgba(255,150,50,.9);transform:scale(1.4)}}
+.ls-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.ls-p{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,140,0,.6);animation:particleFloat linear infinite}
+@keyframes particleFloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-20px) scale(1);opacity:0}}
 @keyframes sp{to{transform:rotate(360deg)}}
-.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(10,12,18,0.97);backdrop-filter:blur(24px);border-top:1px solid var(--border);display:flex;z-index:100;padding:10px 0 16px}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed;bottom:0;left:0;right:0;background:rgba(12,7,0,0.97);backdrop-filter:blur(24px);border-top:1px solid var(--border2);display:flex;z-index:100;padding:8px 0 14px}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:2px 0}
-.ni-ic{font-size:22px;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
-.ni-lb{font-size:10px;font-weight:600;color:var(--muted);transition:color .2s;letter-spacing:.3px}
+.ni-ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;transition:all .25s cubic-bezier(.34,1.56,.64,1)}
+.ni-lb{font-size:10px;font-weight:600;color:var(--muted);transition:color .2s;letter-spacing:.3px;font-family:'Hind Siliguri',sans-serif}
 .ni.active .ni-lb{color:var(--accent)}
-.ni.active .ni-ic{transform:translateY(-3px)}
+.ni.active .ni-ic{background:rgba(255,122,26,0.15);transform:translateY(-2px)}
 .ni-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);opacity:0;transition:opacity .2s;margin-top:-3px}
 .ni.active .ni-dot{opacity:1}
+
+/* ── PAGES ── */
 .page{display:none;padding:0 16px;animation:fi .28s ease}
 .page.active{display:block}
 @keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .pgt{padding:20px 0 10px;display:flex;align-items:center;justify-content:space-between}
-.pgtitle{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;background:linear-gradient(120deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.prof{display:flex;align-items:center;gap:14px;padding:22px 0 16px}
-.ava{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b06bff);display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;color:#fff;flex-shrink:0;overflow:hidden;border:2px solid rgba(124,111,253,.3)}
+.pgtitle{font-family:'Baloo Da 2',sans-serif;font-size:22px;font-weight:800;color:#fff}
+
+/* ── HOME: HEADER ── */
+.home-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0 14px}
+.hh-left{}
+.hh-greet{font-size:12px;color:rgba(255,180,80,0.7);font-family:'Hind Siliguri',sans-serif;display:flex;align-items:center;gap:4px}
+.hh-name{font-family:'Baloo Da 2',sans-serif;font-size:18px;font-weight:800;color:#fff;line-height:1.2}
+.hh-right{display:flex;align-items:center;gap:8px}
+.notif-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,140,0,0.1);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer}
+.ava{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#c43a00,#ff7a1a);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0;overflow:hidden;border:2px solid rgba(255,140,0,.3)}
 .ava img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.pname{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff}
-.pid{font-size:11px;color:var(--muted);margin-top:3px;font-family:monospace;letter-spacing:.5px}
-.balc{background:linear-gradient(140deg,#100e30,#1c1060 55%,#2e1285);border-radius:22px;padding:22px 20px;margin-bottom:13px;position:relative;overflow:hidden;border:1px solid rgba(124,111,253,.25)}
-.balc::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(124,111,253,.2),transparent 70%)}
-.balbl{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:2px;font-weight:600;font-family:'Inter',sans-serif}
-.balamt-wrap{display:flex;align-items:baseline;gap:8px;margin:8px 0 4px;position:relative;z-index:1}
-.balamt{font-family:Arial,sans-serif;font-size:42px;font-weight:700;color:#fff;line-height:1}
-.bal-taka{font-family:'Hind Siliguri',sans-serif;font-size:20px;font-weight:700;color:var(--taka)}
-.balrow{display:flex;gap:10px;margin-top:16px;position:relative;z-index:1}
-.bals{flex:1;background:rgba(255,255,255,.08);border-radius:12px;padding:10px;text-align:center}
-.balsv{font-family:Arial,sans-serif;font-size:15px;font-weight:700;color:#fff}
-.bals-unit{font-size:10px;color:var(--taka);font-weight:700;font-family:'Hind Siliguri',sans-serif}
-.balsl{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;font-family:'Inter',sans-serif}
-.wcard{background:linear-gradient(135deg,#0d1220,#131b2e);border-radius:20px;padding:20px;margin-bottom:13px;border:1px solid rgba(255,200,74,.2)}
-.wchd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.wctitle{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff}
-.wcrb{background:var(--ys);color:var(--yellow);border:1px solid rgba(255,200,74,.3);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:700;font-family:'Inter',sans-serif}
-.wcinfo{display:flex;gap:8px;margin-bottom:14px}
-.wcstat{flex:1;background:rgba(255,255,255,.04);border-radius:12px;padding:10px;text-align:center}
-.wcsv{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#fff}
-.wcsl{font-size:10px;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif;letter-spacing:.2px}
-.bigbtn{width:100%;border:none;border-radius:16px;padding:17px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;letter-spacing:.2px}
-.bigbtn:active{transform:scale(.97)}
-.bigbtn:disabled{opacity:.65;pointer-events:none;cursor:not-allowed}
-.watchbtn{background:linear-gradient(135deg,#ffc84a,#ff9f2a);color:#000}
-.watchbtn.cooldown{background:linear-gradient(135deg,#2a2a3a,#1a1a2a);color:var(--muted);border:1px solid var(--border)}
-.watchbtn.limit-done{background:linear-gradient(135deg,#1a2a1a,#0d1a0d);color:#4a7a4a;border:1px solid rgba(0,100,0,.3)}
-.wdbtn-main{background:linear-gradient(135deg,var(--green),#00b377);color:#fff}
-.wdbtn-ad{background:linear-gradient(135deg,var(--accent),#b06bff);color:#fff}
-.cooldown-bar-wrap{width:100%;height:4px;background:rgba(255,255,255,.1);border-radius:4px;margin-top:10px;overflow:hidden;display:none}
-.cooldown-bar{height:100%;background:var(--yellow);border-radius:4px;transition:width 1s linear}
-.limit-info{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 12px;background:rgba(255,255,255,.04);border-radius:10px;font-size:12px;font-family:'Inter',sans-serif}
-.limit-txt{color:var(--muted)}
-.limit-val{color:var(--yellow);font-weight:600}
-.sec2{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:16px 0 10px;display:flex;align-items:center;gap:8px}
+
+/* ── BALANCE HERO ── */
+.balc{background:linear-gradient(135deg,#c43a00,#e05500,#ff7a1a);border-radius:20px;padding:18px 18px 16px;margin-bottom:14px;position:relative;overflow:hidden}
+.balc::after{content:'🍕';position:absolute;right:-10px;bottom:-10px;font-size:80px;opacity:.08;pointer-events:none}
+.balbl{font-size:10px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:2px;font-weight:600;font-family:'Hind Siliguri',sans-serif}
+.balamt-wrap{display:flex;align-items:baseline;gap:6px;margin:6px 0 14px}
+.balamt{font-family:'Baloo Da 2',sans-serif;font-size:40px;font-weight:800;color:#fff;line-height:1}
+.bal-taka{font-family:'Hind Siliguri',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,.85)}
+.balrow{display:flex;gap:8px;position:relative;z-index:1}
+.bals{flex:1;background:rgba(0,0,0,.2);border-radius:10px;padding:8px;text-align:center}
+.balsv{font-family:'Baloo Da 2',sans-serif;font-size:15px;font-weight:700;color:#fff}
+.balsl{font-size:10px;color:rgba(255,255,255,.5);margin-top:2px;font-family:'Hind Siliguri',sans-serif}
+
+/* ── QUICK ACTION GRID (Home) ── */
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden}
+.qcard:active{transform:scale(.97)}
+.qcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,140,0,.35),transparent)}
+.qcard-ic{font-size:26px}
+.qcard-lbl{font-family:'Baloo Da 2',sans-serif;font-size:14px;font-weight:700;color:#fff}
+.qcard-val{font-size:11px;color:var(--muted);font-family:'Hind Siliguri',sans-serif}
+.qcard-accent{border-color:rgba(62,207,142,.2)}
+.qcard-accent::before{background:linear-gradient(90deg,transparent,rgba(62,207,142,.35),transparent)}
+
+/* ── SQUARE AD CARD ── */
+.adcard{background:rgba(255,140,0,0.08);border:1px solid rgba(255,140,0,0.22);border-radius:20px;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;cursor:pointer;transition:all .2s}
+.adcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,140,0,.5),transparent)}
+.adcard:active{transform:scale(.98)}
+.adcard-badge{background:rgba(255,140,0,0.18);color:var(--accent2);border:1px solid rgba(255,180,50,0.25);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;font-family:'Hind Siliguri',sans-serif;letter-spacing:.3px}
+.adcard-title{font-family:'Baloo Da 2',sans-serif;font-size:17px;font-weight:800;color:#fff;margin-top:4px}
+.adcard-sub{font-size:11px;color:rgba(255,200,100,.5);font-family:'Hind Siliguri',sans-serif}
+.adcard-reward{font-family:'Baloo Da 2',sans-serif;font-size:26px;font-weight:800;color:var(--accent2);line-height:1;margin:4px 0}
+.adcard-btn{background:linear-gradient(135deg,#c43a00,#ff7a1a);color:#fff;border:none;border-radius:14px;padding:13px 32px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;transition:all .2s;margin-top:4px;letter-spacing:.3px}
+.adcard-btn:active{transform:scale(.96)}
+.adcard-btn.cooldown{background:linear-gradient(135deg,#2a1a00,#1a1000);color:var(--muted);border:1px solid var(--border)}
+.adcard-btn.limit-done{background:rgba(0,0,0,.2);color:rgba(100,200,100,.6);border:1px solid rgba(0,150,0,.2);cursor:not-allowed}
+.adcard-progress{display:flex;align-items:center;gap:6px;margin-top:6px}
+.adcard-prog-bar{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.adcard-prog-fill{height:100%;background:linear-gradient(90deg,#ff7a1a,#ffb347);border-radius:4px;transition:width .4s ease}
+.adcard-prog-lbl{font-size:10px;color:rgba(255,180,80,.5);font-family:'Baloo Da 2',sans-serif;font-weight:700;white-space:nowrap}
+.cooldown-bar-wrap{width:100%;height:3px;background:rgba(255,255,255,.08);border-radius:4px;margin-top:6px;overflow:hidden;display:none}
+.cooldown-bar{height:100%;background:var(--accent);border-radius:4px;transition:width 1s linear}
+
+/* ── TASKS ── */
+.sec2{font-family:'Baloo Da 2',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:4px 0 10px;display:flex;align-items:center;gap:8px}
 .titem{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:8px;transition:all .18s}
 .titem.done{opacity:.55}
 .tic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .tinf{flex:1;min-width:0}
-.tnm{font-size:13px;font-weight:600;color:#fff;font-family:'Inter',sans-serif}
-.tds{font-size:11px;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif}
-.trw{font-size:13px;font-weight:700;color:var(--green);white-space:nowrap;font-family:'Inter',sans-serif}
+.tnm{font-size:13px;font-weight:600;color:#fff;font-family:'Hind Siliguri',sans-serif}
+.tds{font-size:11px;color:var(--muted);margin-top:2px;font-family:'Hind Siliguri',sans-serif}
+.trw{font-size:13px;font-weight:700;color:var(--green);white-space:nowrap;font-family:'Hind Siliguri',sans-serif}
 .task-actions{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
-.tbtn{background:var(--gs);color:var(--green);border:1px solid rgba(0,224,150,.25);border-radius:8px;padding:6px 13px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.2px;white-space:nowrap}
+.tbtn{background:var(--gs);color:var(--green);border:1px solid rgba(62,207,142,.25);border-radius:8px;padding:6px 13px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Hind Siliguri',sans-serif;letter-spacing:.2px;white-space:nowrap}
 .tbtn:active{transform:scale(.95)}
 .tdone{width:28px;height:28px;border-radius:50%;background:var(--gs);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--green);flex-shrink:0}
+
+/* ── TASK OVERLAY ── */
 .task-ov{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(8px)}
 .task-ov.open{display:flex}
-.task-box{background:linear-gradient(145deg,#0f111a,#171a2e);border:1px solid rgba(124,111,253,.25);border-radius:22px;padding:28px 22px;width:100%;max-width:360px;text-align:center;animation:popIn .35s cubic-bezier(.34,1.56,.64,1)}
+.task-box{background:linear-gradient(145deg,#1a0e00,#221500);border:1px solid rgba(255,140,0,.25);border-radius:22px;padding:28px 22px;width:100%;max-width:360px;text-align:center;animation:popIn .35s cubic-bezier(.34,1.56,.64,1)}
 .task-box-ic{font-size:46px;margin-bottom:10px}
-.task-box-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
-.task-box-sub{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.task-box-title{font-family:'Baloo Da 2',sans-serif;font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.task-box-sub{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px;font-family:'Hind Siliguri',sans-serif}
 .task-box-btns{display:flex;flex-direction:column;gap:10px}
-.tbig{width:100%;border:none;border-radius:12px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.tbig{width:100%;border:none;border-radius:12px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;transition:all .2s}
 .tbig:active{transform:scale(.97)}
 .tbig.join{background:linear-gradient(135deg,#229ed9,#1a7fbf);color:#fff}
 .tbig.check{background:linear-gradient(135deg,var(--green),#00b377);color:#fff}
 .tbig.cancel{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--border)}
-.task-verify-status{font-size:12px;margin-top:8px;min-height:18px;font-family:'Inter',sans-serif}
+.task-verify-status{font-size:12px;margin-top:8px;min-height:18px;font-family:'Hind Siliguri',sans-serif}
+
+/* ── SUPPORT ── */
 .vcard{background:#000;border-radius:20px;overflow:hidden;margin-bottom:14px;border:1px solid var(--border)}
-.vph{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0a0a1a,#141428);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden;cursor:pointer}
-.vplay{width:62px;height:62px;border-radius:50%;background:rgba(124,111,253,.75);display:flex;align-items:center;justify-content:center;font-size:26px;border:2px solid rgba(255,255,255,.2);z-index:2}
+.vph{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#150800,#2a1500);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden;cursor:pointer}
+.vplay{width:62px;height:62px;border-radius:50%;background:rgba(255,122,26,.75);display:flex;align-items:center;justify-content:center;font-size:26px;border:2px solid rgba(255,255,255,.2);z-index:2}
 .vbar{padding:12px 16px;background:var(--bg2)}
 .vbart{font-size:13px;font-weight:600;color:#fff;font-family:'Hind Siliguri',sans-serif}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
@@ -138,147 +216,281 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .sic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px}
 .st{font-size:13px;font-weight:600;color:#fff;font-family:'Hind Siliguri',sans-serif}
 .sd{font-size:11px;color:var(--muted);font-family:'Hind Siliguri',sans-serif}
-.rhero{background:linear-gradient(135deg,#0d1117,#1a1f35);border:1px solid rgba(124,111,253,.2);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
+
+/* ── REFERRAL ── */
+.rhero{background:linear-gradient(135deg,#150a00,#2a1500);border:1px solid rgba(255,140,0,.2);border-radius:20px;padding:24px 20px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden}
 .rhero::before{content:'👥';position:absolute;font-size:110px;opacity:.04;top:-10px;right:-20px}
 .remo{font-size:40px;margin-bottom:8px}
-.rht{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:5px}
-.rhs{font-size:12px;color:var(--muted);font-family:'Inter',sans-serif}
+.rht{font-family:'Baloo Da 2',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:5px}
+.rhs{font-size:12px;color:var(--muted);font-family:'Hind Siliguri',sans-serif}
 .rstats{display:flex;gap:10px;margin-top:18px}
-.rstat{flex:1;background:var(--as);border:1px solid rgba(124,111,253,.2);border-radius:12px;padding:12px;text-align:center}
-.rsv{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent)}
-.rsl{font-size:10px;color:var(--muted);margin-top:3px;font-family:'Inter',sans-serif;letter-spacing:.2px}
+.rstat{flex:1;background:var(--as);border:1px solid rgba(255,122,26,.2);border-radius:12px;padding:12px;text-align:center}
+.rsv{font-family:'Baloo Da 2',sans-serif;font-size:22px;font-weight:800;color:var(--accent)}
+.rsl{font-size:10px;color:var(--muted);margin-top:3px;font-family:'Hind Siliguri',sans-serif;letter-spacing:.2px}
 .rlc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px}
-.flbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;font-weight:700;margin-bottom:8px;display:block;font-family:'Inter',sans-serif}
+.flbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;font-weight:700;margin-bottom:8px;display:block;font-family:'Hind Siliguri',sans-serif}
 .rbox{display:flex;gap:8px;align-items:center}
-.rtxt{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--accent);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.cbtn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;flex-shrink:0;letter-spacing:.2px}
+.rtxt{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--accent2);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cbtn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Hind Siliguri',sans-serif;transition:all .2s;flex-shrink:0}
 .cbtn:active{transform:scale(.94)}
-.sbtn{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;letter-spacing:.2px}
+.sbtn{width:100%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Hind Siliguri',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px}
 .ritem{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
 .ritem:last-child{border-bottom:none}
-.rava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#b06bff);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
-.run{font-size:13px;font-weight:600;color:#fff;font-family:'Inter',sans-serif}
-.rdt{font-size:11px;color:var(--muted);margin-top:2px;font-family:'Inter',sans-serif}
-.re{font-size:13px;font-weight:700;color:var(--green);margin-left:auto;white-space:nowrap;font-family:'Inter',sans-serif}
-.wbal{background:linear-gradient(135deg,#0d1117,#0a1f18);border:1px solid rgba(0,224,150,.2);border-radius:20px;padding:22px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden}
-.wbal::before{content:'';position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(0,224,150,.07),transparent 70%)}
-.wbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700;font-family:'Inter',sans-serif}
+.rava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#c43a00,#ff7a1a);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
+.run{font-size:13px;font-weight:600;color:#fff;font-family:'Hind Siliguri',sans-serif}
+.rdt{font-size:11px;color:var(--muted);margin-top:2px;font-family:'Hind Siliguri',sans-serif}
+.re{font-size:13px;font-weight:700;color:var(--green);margin-left:auto;white-space:nowrap;font-family:'Hind Siliguri',sans-serif}
+
+/* ── WALLET ── */
+.wbal{background:linear-gradient(135deg,#0a1a10,#0a2015);border:1px solid rgba(62,207,142,.2);border-radius:20px;padding:22px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden}
+.wbal::before{content:'';position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(62,207,142,.07),transparent 70%)}
+.wbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:700;font-family:'Hind Siliguri',sans-serif}
 .wba-wrap{display:flex;align-items:baseline;justify-content:center;gap:8px;position:relative;z-index:1}
-.wba{font-family:Arial,sans-serif;font-size:44px;font-weight:700;color:var(--green);line-height:1}
+.wba{font-family:'Baloo Da 2',sans-serif;font-size:44px;font-weight:800;color:var(--green);line-height:1}
 .wba-taka{font-family:'Hind Siliguri',sans-serif;font-size:20px;font-weight:700;color:var(--taka)}
-.wbs{font-size:12px;color:var(--muted);margin-top:4px;font-family:'Inter',sans-serif}
+.wbs{font-size:12px;color:var(--muted);margin-top:4px;font-family:'Hind Siliguri',sans-serif}
 .wdform{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;margin-bottom:14px}
-.ftitle{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ftitle{font-family:'Baloo Da 2',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .fg{margin-bottom:14px}
 .sw{position:relative}
-select.fi,input.fi{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:13px 14px;font-size:14px;color:#fff;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;appearance:none;-webkit-appearance:none;letter-spacing:.2px}
-select.fi:focus,input.fi:focus{border-color:rgba(124,111,253,.5)}
-select.fi option{background:#1a1d26}
+select.fi,input.fi{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:13px 14px;font-size:14px;color:#fff;font-family:'Hind Siliguri',sans-serif;outline:none;transition:border-color .2s;appearance:none;-webkit-appearance:none}
+select.fi:focus,input.fi:focus{border-color:rgba(255,122,26,.5)}
+select.fi option{background:#221500}
 .sarr{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:12px}
-.wd-ad-info{background:rgba(124,111,253,.08);border:1px solid rgba(124,111,253,.2);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12px;color:rgba(255,255,255,.7);display:none;line-height:1.6;font-family:'Inter',sans-serif}
+.wd-ad-info{background:rgba(255,122,26,.08);border:1px solid rgba(255,122,26,.2);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12px;color:rgba(255,255,255,.7);display:none;line-height:1.6;font-family:'Hind Siliguri',sans-serif}
+.bigbtn{width:100%;border:none;border-radius:16px;padding:17px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s}
+.bigbtn:active{transform:scale(.97)}
+.bigbtn:disabled{opacity:.65;pointer-events:none}
+.wdbtn-main{background:linear-gradient(135deg,var(--green),#00b377);color:#fff}
+
+/* ── WITHDRAWAL HISTORY ── */
 .hitem{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:9px}
 .htop{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .hwallet{display:flex;align-items:center;gap:8px}
 .hwic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
-.hwn{font-size:13px;font-weight:600;color:#fff;font-family:'Inter',sans-serif}
-.hamt{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff}
+.hwn{font-size:13px;font-weight:600;color:#fff;font-family:'Hind Siliguri',sans-serif}
+.hamt{font-family:'Baloo Da 2',sans-serif;font-size:16px;font-weight:700;color:#fff}
 .hbtm{display:flex;align-items:center;justify-content:space-between}
 .hacc{font-size:11px;color:var(--muted);font-family:monospace}
-.sbdg{border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;font-family:'Inter',sans-serif;letter-spacing:.2px}
+.sbdg{border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;font-family:'Hind Siliguri',sans-serif}
 .sp{background:var(--ys);color:var(--yellow);border:1px solid rgba(255,200,74,.25)}
-.sa{background:var(--gs);color:var(--green);border:1px solid rgba(0,224,150,.25)}
+.sa{background:var(--gs);color:var(--green);border:1px solid rgba(62,207,142,.25)}
 .sr{background:var(--rs);color:var(--red);border:1px solid rgba(255,95,95,.25)}
-.ht{font-size:11px;color:var(--muted);margin-top:6px;font-family:'Inter',sans-serif}
-.hrr{background:var(--rs);border:1px solid rgba(255,95,95,.2);border-radius:8px;padding:8px 10px;font-size:11px;color:var(--red);margin-top:8px;display:flex;gap:6px;font-family:'Inter',sans-serif}
+.ht{font-size:11px;color:var(--muted);margin-top:6px;font-family:'Hind Siliguri',sans-serif}
+.hrr{background:var(--rs);border:1px solid rgba(255,95,95,.2);border-radius:8px;padding:8px 10px;font-size:11px;color:var(--red);margin-top:8px;display:flex;gap:6px;font-family:'Hind Siliguri',sans-serif}
+
+/* ── AD OVERLAY ── */
 .adov{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:500;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px}
 .adov.open{display:flex}
 .adov-type{display:none}
 .adov-type.watch{background:var(--ys);color:var(--yellow);border:1px solid rgba(255,200,74,.3)}
-.adov-type.wd{background:var(--gs);color:var(--green);border:1px solid rgba(0,224,150,.3)}
-.adov-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-align:center}
+.adov-type.wd{background:var(--gs);color:var(--green);border:1px solid rgba(62,207,142,.3)}
+.adov-title{font-family:'Baloo Da 2',sans-serif;font-size:20px;font-weight:800;color:#fff;text-align:center}
 .adov-step-lbl,.adov-net-name,.adov-status{display:none}
 .adov-steps{display:flex;gap:7px;margin:12px 0;flex-wrap:wrap;justify-content:center;max-width:320px}
 .adov-s{height:8px;border-radius:8px;background:rgba(255,255,255,.1);transition:all .35s;flex:1;min-width:20px;max-width:50px}
 .adov-s.done{background:var(--green)}
-.adov-s.active{background:var(--yellow);animation:puls .8s infinite}
+.adov-s.active{background:var(--accent);animation:puls .8s infinite}
 .adov-s.skip{background:rgba(255,255,255,.25)}
 @keyframes puls{0%,100%{opacity:1}50%{opacity:.35}}
 .adov-reward-wrap{display:flex;align-items:baseline;gap:6px;justify-content:center;margin:4px 0}
-.adov-reward{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:var(--yellow)}
+.adov-reward{font-family:'Baloo Da 2',sans-serif;font-size:38px;font-weight:800;color:var(--accent2)}
 .adov-taka{font-family:'Hind Siliguri',sans-serif;font-size:18px;font-weight:700;color:var(--taka)}
-.adov-rsub{font-size:11px;color:var(--muted);text-align:center;font-family:'Inter',sans-serif}
+.adov-rsub{font-size:11px;color:var(--muted);text-align:center;font-family:'Hind Siliguri',sans-serif}
 .adov-msg{display:none!important}
 .adov-wd-loading{display:none;flex-direction:column;align-items:center;gap:16px;margin-top:8px}
 .adov-wd-loading.show{display:flex}
 .adov-wd-spinner{width:48px;height:48px;border:4px solid rgba(255,255,255,.1);border-top-color:var(--green);border-radius:50%;animation:sp .7s linear infinite}
-.adov-wd-txt{font-size:14px;color:var(--muted);font-family:'Inter',sans-serif}
+.adov-wd-txt{font-size:14px;color:var(--muted);font-family:'Hind Siliguri',sans-serif}
 .adov-complete{text-align:center;padding:16px;display:none;flex-direction:column;align-items:center;gap:8px}
 .adov-complete.show{display:flex}
 .adov-complete-ic{font-size:48px;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
-.adov-complete-txt{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff}
-.adov-complete-sub{font-size:13px;color:var(--muted);font-family:'Inter',sans-serif}
+.adov-complete-txt{font-family:'Baloo Da 2',sans-serif;font-size:18px;font-weight:800;color:#fff}
+.adov-complete-sub{font-size:13px;color:var(--muted);font-family:'Hind Siliguri',sans-serif}
 @keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
-.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(20,24,38,.97);border:1px solid rgba(124,111,253,.3);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.34,1.4,.64,1);backdrop-filter:blur(20px);white-space:nowrap;font-family:'Inter',sans-serif}
+
+/* ── TOAST ── */
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(25,14,0,.97);border:1px solid rgba(255,140,0,.3);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.34,1.4,.64,1);backdrop-filter:blur(20px);white-space:nowrap;font-family:'Hind Siliguri',sans-serif}
 .toast.show{transform:translateX(-50%) translateY(0)}
-.empty{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
+
+/* ── MISC ── */
+.empty{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px;font-family:'Hind Siliguri',sans-serif}
 .eic{font-size:36px;margin-bottom:8px}
-.chip{border-radius:20px;padding:4px 10px;font-size:10px;font-weight:600;background:var(--as);color:var(--accent);border:1px solid rgba(124,111,253,.25);font-family:'Inter',sans-serif;letter-spacing:.3px}
+.chip{border-radius:20px;padding:4px 10px;font-size:10px;font-weight:600;background:var(--as);color:var(--accent2);border:1px solid rgba(255,122,26,.25);font-family:'Hind Siliguri',sans-serif}
+
+/* ── TASK PAGE STATS BAR ── */
+.task-stats-bar{display:flex;gap:8px;margin-bottom:14px}
+.tsb-item{flex:1;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px;text-align:center}
+.tsb-val{font-family:'Baloo Da 2',sans-serif;font-size:18px;font-weight:800;color:var(--accent2)}
+.tsb-lbl{font-size:10px;color:var(--muted);margin-top:2px;font-family:'Hind Siliguri',sans-serif}
 </style>
 </head>
 <body>
-<script src="https://pl29442282.profitablecpmratenetwork.com/d3/47/09/d3470990548a2ecfa0bae9466a7343ba.js"></script>
+<script src="https://pl28944003.profitablecpmratenetwork.com/e8/fa/ff/e8fafff875e5c15d6348f130eaac93ca.js"></script>
+
+<!-- WELCOME -->
 <div id="welcomeScreen">
   <div class="welcome-box">
     <div class="welcome-emoji" id="welcomeEmoji">🎉</div>
-    <div class="welcome-title" id="welcomeTitle">Welcome!</div>
-    <div class="welcome-msg" id="welcomeMsg">Start watching ads and earn money every day!</div>
-    <button class="welcome-btn" onclick="closeWelcome()">Let's Go! →</button>
+    <div class="welcome-title" id="welcomeTitle">স্বাগতম!</div>
+    <div class="welcome-msg" id="welcomeMsg">প্রতিদিন বিজ্ঞাপন দেখুন এবং টাকা আয় করুন!</div>
+    <button class="welcome-btn" onclick="closeWelcome()">শুরু করুন →</button>
   </div>
 </div>
+
+<!-- BLOCKED -->
 <div id="blockedScreen">
   <div class="blocked-ic">🚫</div>
   <div class="blocked-title">No internet connection...</div>
-  <div class="blocked-sub">Chek your Network and try again</div>
+  <div class="blocked-sub">Check your Network and try again</div>
 </div>
+
+<!-- LOADER -->
 <div id="ls">
-  <div class="ll">Earnexo</div>
-  <div class="lsub">Loading your account...</div>
-  <div class="lsp"></div>
-</div>
-<div class="page active" id="page-home">
-  <div class="prof">
-    <div class="ava" id="uava">U</div>
-    <div style="flex:1"><div class="pname" id="uname">—</div><div class="pid" id="uid">ID: —</div></div>
-    <div class="chip">Premium</div>
-  </div>
-  <div class="balc">
-    <div class="balbl">Total Balance</div>
-    <div class="balamt-wrap"><div class="balamt" id="hbal">0.00</div><div class="bal-taka">টাকা</div></div>
-    <div class="balrow">
-      <div class="bals"><div class="balsv" id="sEarned">0.00</div><div class="bals-unit">টাকা</div><div class="balsl">Earned</div></div>
-      <div class="bals"><div class="balsv" id="sWd">0.00</div><div class="bals-unit">টাকা</div><div class="balsl">Withdrawn</div></div>
-      <div class="bals"><div class="balsv" id="sRef">0</div><div class="balsl" style="margin-top:12px">Referrals</div></div>
+  <div class="ls-bg"></div>
+  <div class="ls-orb ls-orb1"></div>
+  <div class="ls-orb ls-orb2"></div>
+  <div class="ls-orb ls-orb3"></div>
+  <div class="ls-grid"></div>
+  <div class="ls-particles" id="lsParticles"></div>
+  <div class="ls-center">
+    <div class="ls-logo-wrap">
+      <div class="ls-rings">
+        <div class="ls-ring ls-ring1"></div>
+        <div class="ls-ring ls-ring2"></div>
+        <div class="ls-ring ls-ring3"></div>
+      </div>
+      <div class="ls-hex">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,4 93,27.5 93,72.5 50,96 7,72.5 7,27.5" stroke="url(#hexGrad)" stroke-width="1.5" fill="none" stroke-dasharray="6 3" opacity="0.7"/>
+          <polygon points="50,14 83,32 83,68 50,86 17,68 17,32" stroke="rgba(255,140,0,0.3)" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="hexGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ff6a00"/>
+              <stop offset="100%" stop-color="#ffcc44"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="ls-icon-bg">
+        <div class="ls-icon-emoji">🍕</div>
+      </div>
+    </div>
+    <div class="ls-title"><span>Zomato</span> Platform</div>
+    <div class="ls-sub">আপনার একাউন্ট লোড হচ্ছে</div>
+    <div class="ls-bar-wrap"><div class="ls-bar"></div></div>
+    <div class="ls-dots">
+      <div class="ls-dot"></div>
+      <div class="ls-dot"></div>
+      <div class="ls-dot"></div>
     </div>
   </div>
-  <div class="wcard">
-    <div class="wchd"><div class="wctitle">📺 বিজ্ঞাপন দেখে আয় করুন</div><div class="wcrb" id="wcRB">+৳ 0.50</div></div>
-    <div class="wcinfo" style="display:none">
-  <div class="wcstat" style="display:none"><div class="wcsv" id="wcAds">0</div><div class="wcsl">Ads / session</div></div>
-  <div class="wcstat" style="display:none"><div class="wcsv" id="wcToday">0</div><div class="wcsl">Watched today</div></div>
-  <div class="wcstat" style="display:none"><div class="wcsv" id="wcLimit">5</div><div class="wcsl">Daily limit</div></div>
 </div>
-<div style="background:rgba(255,200,74,.08);border:1px solid rgba(255,200,74,.2);border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.8;font-family:'Hind Siliguri',sans-serif;text-align:center">
-  📺 নিচের বাটনে ক্লিক করুন এবং বিজ্ঞাপন দেখুন।<br>প্রতিটি বিজ্ঞাপন দেখা শেষ হলে স্বয়ংক্রিয়ভাবে টাকা যোগ হবে।
-</div>
-<button class="bigbtn watchbtn" id="watchBtn" onclick="startChain('watch')">▶ বিজ্ঞাপন দেখুন</button>
-    <div class="cooldown-bar-wrap" id="cooldownBarWrap"><div class="cooldown-bar" id="cooldownBar" style="width:100%"></div></div>
-    <div class="limit-info"><span class="limit-txt">Today's progress</span><span class="limit-val" id="limitProgress">0 / 5</span></div>
+<script>
+(function(){var c=document.getElementById('lsParticles');if(!c)return;for(var i=0;i<18;i++){var p=document.createElement('div');p.className='ls-p';var left=Math.random()*100;var dur=4+Math.random()*6;var delay=Math.random()*8;var size=2+Math.random()*3;p.style.cssText='left:'+left+'%;width:'+size+'px;height:'+size+'px;animation-duration:'+dur+'s;animation-delay:-'+delay+'s;opacity:'+(0.3+Math.random()*0.5);c.appendChild(p);}})();
+</script>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-header">
+    <div class="hh-left">
+      <div class="hh-greet">Good morning 🌅</div>
+      <div class="hh-name" id="uname">—</div>
+      <div style="font-size:10px;color:var(--muted);font-family:monospace;margin-top:2px" id="uid">ID: —</div>
+    </div>
+    <div class="hh-right">
+      <div class="chip">⭐ Active</div>
+      <div class="ava" id="uava">U</div>
+    </div>
   </div>
+
+  <!-- Balance Hero -->
+  <div class="balc">
+    <div class="balbl">মোট ব্যালেন্স</div>
+    <div class="balamt-wrap">
+      <div class="balamt" id="hbal">0.00</div>
+      <div class="bal-taka">টাকা</div>
+    </div>
+    <div class="balrow">
+      <div class="bals"><div class="balsv" id="sEarned">0.00</div><div class="balsl">আয় করা</div></div>
+      <div class="bals"><div class="balsv" id="sWd">0.00</div><div class="balsl">উত্তোলন</div></div>
+      <div class="bals"><div class="balsv" id="sRef">0</div><div class="balsl">রেফারেল</div></div>
+    </div>
+  </div>
+
+  <!-- Quick action cards linking to Task page -->
+  <div class="quick-grid">
+    <div class="qcard" onclick="showPageByName('tasks')">
+      <div class="qcard-ic">🎬</div>
+      <div class="qcard-lbl">বিজ্ঞাপন দেখুন</div>
+      <div class="qcard-val" id="homeAdSub">Daily: 0/5</div>
+    </div>
+    <div class="qcard qcard-accent" onclick="showPageByName('tasks')">
+      <div class="qcard-ic">⚡</div>
+      <div class="qcard-lbl">Tasks করুন</div>
+      <div class="qcard-val" id="homeTaskSub">টাকা আয় করুন</div>
+    </div>
+  </div>
+
+  <!-- Recent activity strip -->
+  <div class="sec2">📊 সারসংক্ষেপ</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 16px;margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+      <span style="font-size:13px;color:var(--muted);font-family:'Hind Siliguri',sans-serif">আজকের আয়</span>
+      <span style="font-size:14px;font-weight:700;color:var(--green);font-family:'Baloo Da 2',sans-serif" id="todayEarned">৳ 0.00</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+      <span style="font-size:13px;color:var(--muted);font-family:'Hind Siliguri',sans-serif">মোট রেফারেল</span>
+      <span style="font-size:14px;font-weight:700;color:var(--accent2);font-family:'Baloo Da 2',sans-serif" id="homeRefCount">0</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0">
+      <span style="font-size:13px;color:var(--muted);font-family:'Hind Siliguri',sans-serif">সম্পন্ন Tasks</span>
+      <span style="font-size:14px;font-weight:700;color:var(--accent);font-family:'Baloo Da 2',sans-serif" id="homeTaskCount">0</span>
+    </div>
+  </div>
+</div>
+
+<!-- TASKS PAGE (new) -->
+<div class="page" id="page-tasks">
+  <div class="pgt"><div class="pgtitle">Tasks & Ads</div></div>
+
+  <!-- Stats bar -->
+  <div class="task-stats-bar">
+    <div class="tsb-item">
+      <div class="tsb-val" id="tsAdCount">0/5</div>
+      <div class="tsb-lbl">আজকের Ads</div>
+    </div>
+    <div class="tsb-item">
+      <div class="tsb-val" id="tsDone">0</div>
+      <div class="tsb-lbl">Tasks সম্পন্ন</div>
+    </div>
+    <div class="tsb-item">
+      <div class="tsb-val" id="tsEarned">৳0</div>
+      <div class="tsb-lbl">আজকের আয়</div>
+    </div>
+  </div>
+
+  <!-- Square Ad Card -->
+  <div class="adcard" id="adCardWrap">
+    <div class="adcard-badge" id="adCardBadge">🎬 ভিডিও দেখে আয়</div>
+    <div class="adcard-title">বিজ্ঞাপন দেখুন</div>
+    <div class="adcard-sub" id="adCardSub">Daily limit: 5 &nbsp;·&nbsp; Today: 0/5</div>
+    <div class="adcard-reward" id="adCardReward">+৳ 0.50</div>
+    <button class="adcard-btn" id="watchBtn" onclick="startChain('watch')">▶ বিজ্ঞাপন দেখুন</button>
+    <div class="cooldown-bar-wrap" id="cooldownBarWrap"><div class="cooldown-bar" id="cooldownBar" style="width:100%"></div></div>
+    <div class="adcard-progress">
+      <div class="adcard-prog-bar"><div class="adcard-prog-fill" id="adProgFill" style="width:0%"></div></div>
+      <div class="adcard-prog-lbl" id="adProgLbl">0 / 5</div>
+    </div>
+  </div>
+
   <div class="sec2">⚡ Tasks</div>
   <div id="taskList"><div class="empty"><div class="eic">📋</div>No tasks yet</div></div>
 </div>
+
+<!-- SUPPORT -->
 <div class="page" id="page-support">
-  <div class="pgt"><div class="pgtitle" style="font-family:'Hind Siliguri',sans-serif">সাপোর্ট</div></div>
+  <div class="pgt"><div class="pgtitle">সাপোর্ট</div></div>
   <div class="vcard">
     <div class="vph" id="vph" onclick="openTutorial()">
       <div class="vplay">▶</div>
@@ -286,15 +498,17 @@ select.fi option{background:#1a1d26}
     </div>
     <div class="vbar"><div class="vbart" id="vtitle">কিভাবে কাজ করবেন তার ভিডিও</div></div>
   </div>
-  <div class="sec2" style="font-family:'Hind Siliguri',sans-serif">🛟 সাহায্য নিন</div>
-  <div class="sgrid" id="supGrid"><div class="empty" style="grid-column:span 2;font-family:'Hind Siliguri',sans-serif">লোড হচ্ছে...</div></div>
+  <div class="sec2">🛟 সাহায্য নিন</div>
+  <div class="sgrid" id="supGrid"><div class="empty" style="grid-column:span 2">লোড হচ্ছে...</div></div>
 </div>
+
+<!-- REFERRAL -->
 <div class="page" id="page-referral">
   <div class="pgt"><div class="pgtitle">Referral</div></div>
   <div class="rhero">
     <div class="remo">🤝</div>
     <div class="rht">Invite & Earn</div>
-    <div class="rhs">Earn <span id="rbLbl" style="color:var(--taka);font-weight:700;font-family:'Hind Siliguri',sans-serif">৳ 5.00</span> bonus per referral</div>
+    <div class="rhs">Earn <span id="rbLbl" style="color:var(--taka);font-weight:700">৳ 5.00</span> bonus per referral</div>
     <div class="rstats">
       <div class="rstat"><div class="rsv" id="rTotal">0</div><div class="rsl">Total Refs</div></div>
       <div class="rstat"><div class="rsv" id="rCoins">৳0</div><div class="rsl">Earned</div></div>
@@ -311,6 +525,8 @@ select.fi option{background:#1a1d26}
     <div id="rList"><div class="empty"><div class="eic">👤</div>No referrals yet</div></div>
   </div>
 </div>
+
+<!-- WALLET -->
 <div class="page" id="page-wallet">
   <div class="pgt"><div class="pgtitle">Wallet</div></div>
   <div class="wbal">
@@ -337,7 +553,7 @@ select.fi option{background:#1a1d26}
     <div class="fg">
       <span class="flbl">Amount</span>
       <input class="fi" type="number" id="wdAmt" placeholder="0.00" inputmode="numeric" min="0">
-      <div style="font-size:11px;color:var(--muted);margin-top:5px;font-family:'Inter',sans-serif">Minimum: <span id="minWd" style="color:var(--taka);font-family:'Hind Siliguri',sans-serif">৳ 50</span></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:5px;font-family:'Hind Siliguri',sans-serif">Minimum: <span id="minWd" style="color:var(--taka)">৳ 50</span></div>
     </div>
     <button class="bigbtn wdbtn-main" id="wdBtn" onclick="handleWithdraw()">Withdraw Now →</button>
     <div class="wd-ad-info" id="wdAdInfo">⚡ <span id="wdAdInfoTxt">Watch ads before withdrawal</span></div>
@@ -345,12 +561,27 @@ select.fi option{background:#1a1d26}
   <div class="sec2">📋 Withdrawal History</div>
   <div id="wdHist"><div class="empty"><div class="eic">📭</div>No withdrawals yet</div></div>
 </div>
+
+<!-- BOTTOM NAV — 5 items now -->
 <nav class="bnav">
-  <div class="ni active" onclick="showPage('home',this)"><div class="ni-ic">🏠</div><div class="ni-lb">Home</div><div class="ni-dot"></div></div>
-  <div class="ni" onclick="showPage('support',this)"><div class="ni-ic">☎️</div><div class="ni-lb">Support</div><div class="ni-dot"></div></div>
-  <div class="ni" onclick="showPage('referral',this)"><div class="ni-ic">🤝</div><div class="ni-lb">Referral</div><div class="ni-dot"></div></div>
-  <div class="ni" onclick="showPage('wallet',this)"><div class="ni-ic">💰</div><div class="ni-lb">Wallet</div><div class="ni-dot"></div></div>
+  <div class="ni active" onclick="showPage('home',this)">
+    <div class="ni-ic">🏡</div><div class="ni-lb">হোম</div><div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="showPage('tasks',this)">
+    <div class="ni-ic">⚡</div><div class="ni-lb">টাস্ক</div><div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="showPage('support',this)">
+    <div class="ni-ic">🎧</div><div class="ni-lb">হেল্প</div><div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="showPage('referral',this)">
+    <div class="ni-ic">👫</div><div class="ni-lb">বন্ধু</div><div class="ni-dot"></div>
+  </div>
+  <div class="ni" onclick="showPage('wallet',this)">
+    <div class="ni-ic">🏦</div><div class="ni-lb">পেমেন্ট</div><div class="ni-dot"></div>
+  </div>
 </nav>
+
+<!-- TASK OVERLAY -->
 <div class="task-ov" id="taskOv">
   <div class="task-box">
     <div class="task-box-ic" id="tovIc">📢</div>
@@ -364,6 +595,8 @@ select.fi option{background:#1a1d26}
     <div class="task-verify-status" id="tovStatus"></div>
   </div>
 </div>
+
+<!-- AD OVERLAY -->
 <div class="adov" id="adOverlay">
   <div class="adov-type" id="adovType">📺 WATCH & EARN</div>
   <div class="adov-title" id="adovTitle">Watching Ads...</div>
@@ -387,7 +620,9 @@ select.fi option{background:#1a1d26}
     <div class="adov-complete-sub" id="adovCompleteSub">Balance updated automatically</div>
   </div>
 </div>
+
 <div class="toast" id="toast"></div>
+
 <script>
 const firebaseConfig = {
   apiKey: "AIzaSyA72WvRhNzQOPOgHZz7tax5vHdT7LsMQ08",
@@ -401,41 +636,36 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db=firebase.database();
 
-let APP={userId:null,userName:null,userPhoto:null,balance:0,totalEarned:0,totalWithdrawn:0,referralCode:null,referrals:[],completedTasks:[],watchedAds:[],settings:{referralBonus:5,minWithdraw:50,welcomeBonus:0,botUsername:'YourBot',botToken:'',watchChain:{count:3,reward:0.5,slots:[],cooldownSec:30,dailyLimit:5},withdrawChain:{enabled:false,count:2,message:'Watch ads before withdrawal',slots:[]},credentials:{adsgram:{},monetag:{},adsterra:{}},tasks:[],supportCards:[],video:{},welcome:{enabled:false,emoji:'🎉',title:'Welcome!',message:'Start watching ads and earn money every day!'}}};
+let APP={userId:null,userName:null,userPhoto:null,balance:0,totalEarned:0,totalWithdrawn:0,referralCode:null,referrals:[],completedTasks:[],watchedAds:[],settings:{referralBonus:5,minWithdraw:50,welcomeBonus:0,botUsername:'YourBot',botToken:'',watchChain:{count:3,reward:0.5,slots:[],cooldownSec:30,dailyLimit:5},withdrawChain:{enabled:false,count:2,message:'Watch ads before withdrawal',slots:[]},credentials:{adsgram:{},gigapub:{},adsterra:{}},tasks:[],supportCards:[],video:{},welcome:{enabled:false,emoji:'🎉',title:'স্বাগতম!',message:'প্রতিদিন বিজ্ঞাপন দেখুন এবং টাকা আয় করুন!'}}};
 
 let CS={active:false,type:null,queue:[],idx:0,total:0,reward:0,done:false,wdData:null};
 let cooldownInterval=null,cooldownEndTime=0;
 let TOV={taskId:null,link:null,channelId:null};
 
-// ── Firebase Array Fix: Firebase stores arrays as objects with numeric keys ──
 function toArr(v){if(!v)return[];if(Array.isArray(v))return v;return Object.values(v);}
 
 window.addEventListener('DOMContentLoaded',async()=>{
-// ── AUTO REJECT (background) ──
-setTimeout(async()=>{
-  try{
-    const cfgSnap=await db.ref('settings/autoReject').get();
-    const cfg=cfgSnap.val();
-    if(!cfg||!cfg.enabled)return;
-    const cutoff=Date.now()-((cfg.hours||1)*3600000);
-    const wSnap=await db.ref('withdrawals').get();
-    if(!wSnap.exists())return;
-    const tasks=[];
-    wSnap.forEach(c=>{
-      const w=c.val();
-      if(w.status==='pending'&&new Date(w.createdAt).getTime()<cutoff)
-        tasks.push({id:c.key,userId:w.userId,amount:w.amount});
-    });
-    for(const w of tasks){
-      await db.ref('withdrawals/'+w.id).update({status:'rejected',reason:'[Auto] '+(cfg.reason||'সময়মতো প্রসেস করা হয়নি')});
-      const uSnap=await db.ref('users/'+w.userId).get();
-      if(uSnap.exists()){const d=uSnap.val();await db.ref('users/'+w.userId).update({balance:(d.balance||0)+w.amount,totalWithdrawn:Math.max(0,(d.totalWithdrawn||0)-w.amount)});}
-    }
-  }catch(e){}
-}, 3000);
+  // AUTO REJECT
+  setTimeout(async()=>{
+    try{
+      const cfgSnap=await db.ref('settings/autoReject').get();
+      const cfg=cfgSnap.val();
+      if(!cfg||!cfg.enabled)return;
+      const cutoff=Date.now()-((cfg.hours||1)*3600000);
+      const wSnap=await db.ref('withdrawals').get();
+      if(!wSnap.exists())return;
+      const tasks=[];
+      wSnap.forEach(c=>{const w=c.val();if(w.status==='pending'&&new Date(w.createdAt).getTime()<cutoff)tasks.push({id:c.key,userId:w.userId,amount:w.amount});});
+      for(const w of tasks){
+        await db.ref('withdrawals/'+w.id).update({status:'rejected',reason:'[Auto] '+(cfg.reason||'সময়মতো প্রসেস করা হয়নি')});
+        const uSnap=await db.ref('users/'+w.userId).get();
+        if(uSnap.exists()){const d=uSnap.val();await db.ref('users/'+w.userId).update({balance:(d.balance||0)+w.amount,totalWithdrawn:Math.max(0,(d.totalWithdrawn||0)-w.amount)});}
+      }
+    }catch(e){}
+  },3000);
 
   const tg=window.Telegram?.WebApp;
-  if(tg){tg.ready();tg.expand();tg.setBackgroundColor('#07080d');}
+  if(tg){tg.ready();tg.expand();tg.setBackgroundColor('#100800');}
   const user=tg?.initDataUnsafe?.user;
   if(user){APP.userId=String(user.id);APP.userName=[user.first_name,user.last_name].filter(Boolean).join(' ');APP.userPhoto=user.photo_url||null;}
   else{APP.userId='demo_001';APP.userName='Demo User';}
@@ -449,8 +679,8 @@ setTimeout(async()=>{
       APP.settings={...APP.settings,...s};
       renderTasks();renderSupport();renderVideo();
       updateWatchCard();updateWdBtn();updateUI();
-      const mzid=s.credentials?.monetag?.zoneId;
-      if(mzid&&s.credentials?.monetag?.active)loadMonetag(mzid);
+      const gpid=s.credentials?.gigapub?.scriptId;
+      if(gpid&&s.credentials?.gigapub?.active)loadGigaPub(gpid);
       document.getElementById('rbLbl').textContent=`৳ ${(APP.settings.referralBonus||5).toFixed(2)}`;
       document.getElementById('minWd').textContent=`৳ ${(APP.settings.minWithdraw||50).toFixed(2)}`;
       if(!welcomeShown){welcomeShown=true;setTimeout(checkWelcomePopup,800);}
@@ -459,7 +689,6 @@ setTimeout(async()=>{
     const uRef=db.ref('users/'+APP.userId);
     const snap=await uRef.get();
     if(!snap.exists()){
-      // Fetch settings first to get correct welcome & referral bonus
       const settingsSnap=await db.ref('settings').get();
       const settingsData=settingsSnap.val()||{};
       const wb=settingsData.welcomeBonus??0;
@@ -484,7 +713,6 @@ setTimeout(async()=>{
         return;
       }
       APP.balance=d.balance||0;APP.totalEarned=d.totalEarned||0;APP.totalWithdrawn=d.totalWithdrawn||0;
-      // ── FIX: Firebase stores arrays as objects — convert properly ──
       APP.referrals=toArr(d.referrals);
       APP.completedTasks=toArr(d.completedTasks);
       APP.watchedAds=toArr(d.watchedAds);
@@ -505,7 +733,7 @@ setTimeout(async()=>{
   document.getElementById('ls').style.display='none';
 });
 
-function checkWelcomePopup(){const wp=APP.settings.welcome||{};if(!wp.enabled)return;document.getElementById('welcomeEmoji').textContent=wp.emoji||'🎉';document.getElementById('welcomeTitle').textContent=wp.title||'Welcome!';document.getElementById('welcomeMsg').textContent=wp.message||'Start earning today!';document.getElementById('welcomeScreen').classList.add('open');}
+function checkWelcomePopup(){const wp=APP.settings.welcome||{};if(!wp.enabled)return;document.getElementById('welcomeEmoji').textContent=wp.emoji||'🎉';document.getElementById('welcomeTitle').textContent=wp.title||'স্বাগতম!';document.getElementById('welcomeMsg').textContent=wp.message||'Start earning today!';document.getElementById('welcomeScreen').classList.add('open');}
 function closeWelcome(){document.getElementById('welcomeScreen').classList.remove('open');}
 
 function renderTasks(){
@@ -516,7 +744,7 @@ function renderTasks(){
     const done=APP.completedTasks.includes(t.id);
     const hasCh=t.channelId||t.channelUsername;
     return`<div class="titem ${done?'done':''}">
-      <div class="tic" style="background:${t.bg||'rgba(0,224,150,.12)'}">${t.icon||'✅'}</div>
+      <div class="tic" style="background:${t.bg||'rgba(62,207,142,.12)'}">${t.icon||'✅'}</div>
       <div class="tinf"><div class="tnm">${t.name}</div><div class="tds">${t.desc||''}</div></div>
       <div class="task-actions">
         <div class="trw">+৳ ${Number(t.reward).toFixed(2)}</div>
@@ -549,7 +777,6 @@ async function tovVerify(){
     }else{status.style.color='var(--yellow)';status.textContent='⚠️ Could not verify. Reward added anyway.';await completeTask(id,t);setTimeout(tovClose,1400);}
   }catch(e){status.style.color='var(--yellow)';status.textContent='⚠️ Verify failed. Reward added.';await completeTask(id,t);setTimeout(tovClose,1400);}
 }
-
 function tovClose(){document.getElementById('taskOv').classList.remove('open');TOV={taskId:null,link:null,channelId:null};}
 
 async function completeTask(id,t){
@@ -568,30 +795,58 @@ function startCooldownUI(remainingMs){
   const barWrap=document.getElementById('cooldownBarWrap');
   const bar=document.getElementById('cooldownBar');
   const totalSec=APP.settings.watchChain?.cooldownSec||30;
-  barWrap.style.display='block';btn.disabled=true;btn.className='bigbtn watchbtn cooldown';
-  cooldownInterval=setInterval(()=>{const left=Math.max(0,cooldownEndTime-Date.now());const sec=Math.ceil(left/1000);bar.style.width=((left/(totalSec*1000))*100)+'%';if(sec>0)btn.textContent=`⏳ Wait ${sec}s...`;else clearCooldownUI();},500);
+  barWrap.style.display='block';btn.disabled=true;btn.className='adcard-btn cooldown';
+  cooldownInterval=setInterval(()=>{
+    const left=Math.max(0,cooldownEndTime-Date.now());
+    const sec=Math.ceil(left/1000);
+    bar.style.width=((left/(totalSec*1000))*100)+'%';
+    if(sec>0)btn.textContent=`⏳ Wait ${sec}s...`;
+    else clearCooldownUI();
+  },500);
 }
 
 function clearCooldownUI(){
   clearInterval(cooldownInterval);
   const btn=document.getElementById('watchBtn');
   document.getElementById('cooldownBarWrap').style.display='none';
-  if(isDailyLimitReached()){btn.disabled=true;btn.className='bigbtn watchbtn limit-done';btn.textContent="✅ Today's limit reached";return;}
-  btn.disabled=false;btn.className='bigbtn watchbtn';btn.textContent='▶ বিজ্ঞাপন দেখুন';
+  if(isDailyLimitReached()){btn.disabled=true;btn.className='adcard-btn limit-done';btn.textContent="✅ Today's limit reached";return;}
+  btn.disabled=false;btn.className='adcard-btn';btn.textContent='▶ বিজ্ঞাপন দেখুন';
 }
 
-function isDailyLimitReached(){const limit=APP.settings.watchChain?.dailyLimit||5;const today=new Date().toDateString();return APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length>=limit;}
+function isDailyLimitReached(){
+  const limit=APP.settings.watchChain?.dailyLimit||5;
+  const today=new Date().toDateString();
+  return APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length>=limit;
+}
+
+function getTodayAdCount(){
+  const today=new Date().toDateString();
+  return APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length;
+}
+
+function getTodayEarned(){
+  const today=new Date().toDateString();
+  const adEarn=APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).reduce((s,w)=>s+(w.reward||0),0);
+  return adEarn;
+}
 
 function updateWatchCard(){
-  const wc=APP.settings.watchChain||{};const reward=wc.reward||0.5;const limit=wc.dailyLimit||5;
-  document.getElementById('wcAds').textContent=(wc.slots||[]).length||wc.count||0;
-  document.getElementById('wcRB').textContent=`+৳ ${reward.toFixed(2)}`;
-  document.getElementById('wcLimit').textContent=limit;
+  const wc=APP.settings.watchChain||{};
+  const reward=wc.reward||0.5;
+  const limit=wc.dailyLimit||5;
+  const todayCount=getTodayAdCount();
+  document.getElementById('adCardReward').textContent=`+৳ ${reward.toFixed(2)}`;
   document.getElementById('adovReward').textContent=reward.toFixed(2);
-  const today=new Date().toDateString();
-  const todayCount=APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length;
-  document.getElementById('wcToday').textContent=todayCount;
-  document.getElementById('limitProgress').textContent=`${todayCount} / ${limit}`;
+  document.getElementById('adCardSub').textContent=`Daily limit: ${limit} · Today: ${todayCount}/${limit}`;
+  document.getElementById('adProgLbl').textContent=`${todayCount} / ${limit}`;
+  document.getElementById('adProgFill').style.width=`${Math.min(100,(todayCount/limit)*100)}%`;
+  // update task page stats bar
+  document.getElementById('tsAdCount').textContent=`${todayCount}/${limit}`;
+  document.getElementById('tsDone').textContent=APP.completedTasks.length;
+  document.getElementById('tsEarned').textContent=`৳${getTodayEarned().toFixed(2)}`;
+  // update home quick cards
+  document.getElementById('homeAdSub').textContent=`আজ: ${todayCount}/${limit}`;
+  document.getElementById('homeTaskSub').textContent=`${APP.completedTasks.length} সম্পন্ন`;
   checkCooldown();
 }
 
@@ -645,13 +900,18 @@ function playSlot(){
   if(net.name==='adsgram'){
     if(!net.blockId){_next();return;}
     try{const ctrl=window.Adsgram?.init({blockId:String(net.blockId)});if(!ctrl){_next();return;}_slotTimer=setTimeout(_next,30000);ctrl.show().then(_next).catch(_next);}catch(e){_next();}
-  }else if(net.name==='monetag'){
-    if(!net.zoneId){_next();return;}
-    const fnName='show_'+net.zoneId;
-    if(!document.getElementById('monetag-sdk'))loadMonetag(String(net.zoneId));
+  }else if(net.name==='gigapub'){
+    if(!net.scriptId){_next();return;}
+    if(!document.getElementById('gigapub-sdk'))loadGigaPub(String(net.scriptId));
     let tries=0;
-    const poll=()=>{if(_slotAdvanced)return;if(typeof window[fnName]==='function'){try{const p=window[fnName]();if(p&&typeof p.then==='function'){p.then(_next).catch(_next);}else{_slotTimer=setTimeout(_next,3000);}}catch(e){_next();}}else if(tries++<50){setTimeout(poll,80);}else{_next();}};
-    poll();
+    const pollGp=()=>{
+      if(_slotAdvanced)return;
+      if(typeof window.showGiga==='function'){
+        try{window.showGiga().then(_next).catch(_next);}catch(e){_next();}
+      }else if(tries++<60){setTimeout(pollGp,100);}
+      else{_next();}
+    };
+    pollGp();
   }else if(net.name==='adsterra'){
     if(!net.link&&!net.script){_next();return;}
     try{if(net.link){const tg=window.Telegram?.WebApp;if(tg)tg.openLink(net.link);else window.open(net.link,'_blank','noopener');_slotTimer=setTimeout(_next,5000);}else if(net.script){const div=document.createElement('div');div.innerHTML=net.script;div.querySelectorAll('script').forEach(sc=>{const ns=document.createElement('script');if(sc.src){ns.src=sc.src;ns.async=true;}else ns.textContent=sc.textContent;document.body.appendChild(ns);});_slotTimer=setTimeout(_next,4000);}}catch(e){_next();}
@@ -662,8 +922,7 @@ function onSlotDone(){_next();}
 function onSlotSkip(){_next();}
 
 async function chainAllDone(){
-  if(CS.done)return;
-  CS.done=true;CS.active=false;_slotAdvanced=true;
+  if(CS.done)return;CS.done=true;CS.active=false;_slotAdvanced=true;
   if(_slotTimer){clearTimeout(_slotTimer);_slotTimer=null;}
   document.querySelectorAll('.adov-s').forEach(el=>{if(!el.classList.contains('skip'))el.className='adov-s done';});
   if(CS.type==='watch'){
@@ -674,7 +933,6 @@ async function chainAllDone(){
       const nw=[...existingWatched,{date:new Date().toISOString(),reward,type:'watch_chain'}];
       await db.ref('users/'+APP.userId).update({balance:(d.balance||0)+reward,totalEarned:(d.totalEarned||0)+reward,watchedAds:nw,cooldownEndTime:newCooldownEnd});
       cooldownEndTime=newCooldownEnd;
-      document.getElementById('adovTitle').textContent='Balance Updated!';
       document.getElementById('adovCompleteTxt').textContent=`+৳ ${reward.toFixed(2)} টাকা Added!`;
       document.getElementById('adovCompleteSub').textContent='Your balance has been updated';
       document.getElementById('adovComplete').classList.add('show');
@@ -720,8 +978,13 @@ async function submitWithdrawDirect(wdData){
   btn.disabled=false;btn.textContent=orig;
 }
 
-function renderSupport(){const cards=APP.settings.supportCards||[];const el=document.getElementById('supGrid');if(!cards.length){el.innerHTML=`<div class="empty" style="grid-column:span 2;font-family:'Hind Siliguri',sans-serif">কোনো সাপোর্ট লিংক নেই</div>`;return;}el.innerHTML=cards.map(c=>`<a href="${c.link||'#'}" class="scard" target="_blank"><div class="sic" style="background:${c.bg||'var(--as)'}">${c.icon||'💬'}</div><div class="st">${c.title}</div><div class="sd">${c.desc||''}</div></a>`).join('');}
-function renderVideo(){const v=APP.settings.video||{};document.getElementById('vtitle').textContent=v.title||'কিভাবে কাজ করবেন তার ভিডিও';document.getElementById('vph').innerHTML=`<div class="vplay">▶</div><div style="font-size:13px;color:rgba(255,255,255,.5);z-index:2;font-family:'Hind Siliguri',sans-serif">টিউটোরিয়াল ভিডিও</div>`;}
+function renderSupport(){
+  const cards=APP.settings.supportCards||[];
+  const el=document.getElementById('supGrid');
+  if(!cards.length){el.innerHTML=`<div class="empty" style="grid-column:span 2">কোনো সাপোর্ট লিংক নেই</div>`;return;}
+  el.innerHTML=cards.map(c=>`<a href="${c.link||'#'}" class="scard" target="_blank"><div class="sic" style="background:${c.bg||'var(--as)'}">${c.icon||'💬'}</div><div class="st">${c.title}</div><div class="sd">${c.desc||''}</div></a>`).join('');
+}
+function renderVideo(){const v=APP.settings.video||{};document.getElementById('vtitle').textContent=v.title||'কিভাবে কাজ করবেন তার ভিডিও';}
 function openTutorial(){const v=APP.settings.video||{};if(!v.url){showToast('⚠️ Tutorial link set করা নেই');return;}const tg=window.Telegram?.WebApp;if(tg){if(v.url.includes('t.me')||v.url.includes('telegram'))tg.openTelegramLink(v.url);else tg.openLink(v.url);}else window.open(v.url,'_blank');}
 
 function renderRefList(){
@@ -733,9 +996,23 @@ function renderRefList(){
 
 function copyRef(){const l=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;navigator.clipboard?.writeText(l).catch(()=>{});showToast('📋 Referral link copied!');}
 function shareRef(){const l=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;const tg=window.Telegram?.WebApp;const u=`https://t.me/share/url?url=${encodeURIComponent(l)}&text=${encodeURIComponent('🚀 Join Zomato Platform & earn money daily!')}`;if(tg)tg.openTelegramLink(u);else window.open(u,'_blank');}
-function renderWdHist(items){const el=document.getElementById('wdHist');if(!items.length){el.innerHTML=`<div class="empty"><div class="eic">📭</div>No withdrawals yet</div>`;return;}const wm={bkash:{ic:'💰',bg:'rgba(220,50,120,.15)'},nagad:{ic:'💰',bg:'rgba(0,130,70,.15)'},rocket:{ic:'💰',bg:'rgba(138,0,230,.15)'},binance:{ic:'🟡',bg:'rgba(240,185,11,.15)'},crypto:{ic:'₿',bg:'rgba(247,147,26,.15)'}};const sm={pending:'sp',approved:'sa',rejected:'sr'};const sl={pending:'⏳ Pending',approved:'✓ Approved',rejected:'✗ Rejected'};el.innerHTML=items.map(h=>{const m=wm[h.wallet]||{ic:'💰',bg:'rgba(255,255,255,.08)'};return`<div class="hitem"><div class="htop"><div class="hwallet"><div class="hwic" style="background:${m.bg}">${m.ic}</div><div class="hwn">${h.walletLabel||h.wallet}</div></div><div class="hamt">৳ ${Number(h.amount).toFixed(2)}</div></div><div class="hbtm"><div class="hacc">${h.account}</div><div class="sbdg ${sm[h.status]||'sp'}">${sl[h.status]||'Pending'}</div></div><div class="ht">🕐 ${fd(h.createdAt)}</div>${h.status==='rejected'&&h.reason?`<div class="hrr">⚠️ <span>${h.reason}</span></div>`:''}</div>`;}).join('');}
 
-function updateProfile(){document.getElementById('uname').textContent=APP.userName;document.getElementById('uid').textContent='ID: '+APP.userId;const av=document.getElementById('uava');if(APP.userPhoto)av.innerHTML=`<img src="${APP.userPhoto}" alt="a">`;else av.textContent=APP.userName.charAt(0).toUpperCase();}
+function renderWdHist(items){
+  const el=document.getElementById('wdHist');
+  if(!items.length){el.innerHTML=`<div class="empty"><div class="eic">📭</div>No withdrawals yet</div>`;return;}
+  const wm={bkash:{ic:'💰',bg:'rgba(220,50,120,.15)'},nagad:{ic:'💰',bg:'rgba(0,130,70,.15)'},rocket:{ic:'💰',bg:'rgba(138,0,230,.15)'},binance:{ic:'🟡',bg:'rgba(240,185,11,.15)'},crypto:{ic:'₿',bg:'rgba(247,147,26,.15)'}};
+  const sm={pending:'sp',approved:'sa',rejected:'sr'};
+  const sl={pending:'⏳ Pending',approved:'✓ Approved',rejected:'✗ Rejected'};
+  el.innerHTML=items.map(h=>{const m=wm[h.wallet]||{ic:'💰',bg:'rgba(255,255,255,.08)'};return`<div class="hitem"><div class="htop"><div class="hwallet"><div class="hwic" style="background:${m.bg}">${m.ic}</div><div class="hwn">${h.walletLabel||h.wallet}</div></div><div class="hamt">৳ ${Number(h.amount).toFixed(2)}</div></div><div class="hbtm"><div class="hacc">${h.account}</div><div class="sbdg ${sm[h.status]||'sp'}">${sl[h.status]||'Pending'}</div></div><div class="ht">🕐 ${fd(h.createdAt)}</div>${h.status==='rejected'&&h.reason?`<div class="hrr">⚠️ <span>${h.reason}</span></div>`:''}</div>`;}).join('');
+}
+
+function updateProfile(){
+  document.getElementById('uname').textContent=APP.userName;
+  document.getElementById('uid').textContent='ID: '+APP.userId;
+  const av=document.getElementById('uava');
+  if(APP.userPhoto)av.innerHTML=`<img src="${APP.userPhoto}" alt="a">`;
+  else av.textContent=APP.userName.charAt(0).toUpperCase();
+}
 
 function updateUI(){
   const refCount=APP.referrals.length;
@@ -748,10 +1025,33 @@ function updateUI(){
   document.getElementById('rCoins').textContent=`৳${(refCount*(APP.settings.referralBonus||5)).toFixed(2)}`;
   document.getElementById('rActive').textContent=refCount;
   document.getElementById('rLink').textContent=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;
+  // home summary
+  document.getElementById('todayEarned').textContent=`৳ ${getTodayEarned().toFixed(2)}`;
+  document.getElementById('homeRefCount').textContent=refCount;
+  document.getElementById('homeTaskCount').textContent=APP.completedTasks.length;
   renderRefList();renderTasks();
 }
 
-function showPage(p,el){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.ni').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');el.classList.add('active');}
+// showPage with nav element reference
+function showPage(p,el){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  el.classList.add('active');
+}
+
+// showPageByName — navigate without needing the nav element (used by quick cards)
+function showPageByName(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.ni').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  // find and activate matching nav item
+  document.querySelectorAll('.ni').forEach(ni=>{
+    const lb=ni.querySelector('.ni-lb');
+    if(lb&&lb.textContent.trim()==='টাস্ক'&&p==='tasks')ni.classList.add('active');
+  });
+}
+
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
 function ta(iso){if(!iso)return'';const m=Math.floor((Date.now()-new Date(iso))/60000);if(m<1)return'Just now';if(m<60)return`${m}m ago`;const h=Math.floor(m/60);if(h<24)return`${h}h ago`;return`${Math.floor(h/24)}d ago`;}
 function fd(iso){if(!iso)return'—';return new Date(iso).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'});}
