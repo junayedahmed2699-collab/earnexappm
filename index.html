@@ -397,48 +397,104 @@ select.hk-fi option{background:#1a1d26}
 .task-verify-status{font-size:12px;margin-top:8px;min-height:18px;font-family:'Inter',sans-serif}
 
 /* Ad overlay */
-.adov{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:500;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px}
+/* ══ AD OVERLAY ══ */
+.adov{position:fixed;inset:0;background:rgba(4,5,12,.97);z-index:500;display:none;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:0}
 .adov.open{display:flex}
 .adov-type{display:none}
-.adov-type.watch{background:var(--ys);color:var(--yellow);border:1px solid rgba(255,200,74,.3)}
-.adov-type.wd{background:var(--gs);color:var(--green);border:1px solid rgba(0,224,150,.3)}
-.adov-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-align:center}
 .adov-step-lbl,.adov-net-name,.adov-status{display:none}
-.adov-steps{display:flex;gap:7px;margin:12px 0;flex-wrap:wrap;justify-content:center;max-width:320px}
-.adov-s{height:8px;border-radius:8px;background:rgba(255,255,255,.1);transition:all .35s;flex:1;min-width:20px;max-width:50px}
-.adov-s.done{background:var(--green)}.adov-s.active{background:var(--yellow);animation:puls .8s infinite}.adov-s.skip{background:rgba(255,255,255,.25)}
-@keyframes puls{0%,100%{opacity:1}50%{opacity:.35}}
-.adov-reward-wrap{display:flex;align-items:baseline;gap:6px;justify-content:center;margin:4px 0}
-.adov-reward{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:var(--yellow)}
-.adov-taka{font-family:'Hind Siliguri',sans-serif;font-size:18px;font-weight:700;color:var(--taka)}
-.adov-rsub{font-size:11px;color:var(--muted);text-align:center;font-family:'Inter',sans-serif}
 .adov-msg{display:none!important}
+
+/* ── Watching Ads main panel ── */
+#adovMain{width:100%;display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 28px;gap:0}
+
+/* Orbit loader */
+.adov-orbit{position:relative;width:120px;height:120px;margin-bottom:32px;flex-shrink:0}
+.adov-orbit-ring{position:absolute;inset:0;border-radius:50%;border:2px solid transparent;animation:orbitSpin 2.4s linear infinite}
+.adov-orbit-ring:nth-child(1){border-top-color:var(--accent);border-right-color:rgba(255,107,26,.3);animation-duration:1.8s}
+.adov-orbit-ring:nth-child(2){inset:12px;border-top-color:var(--yellow);border-left-color:rgba(255,200,74,.3);animation-duration:2.6s;animation-direction:reverse}
+.adov-orbit-ring:nth-child(3){inset:24px;border-top-color:var(--green);border-bottom-color:rgba(0,224,150,.3);animation-duration:1.4s}
+.adov-orbit-core{position:absolute;inset:36px;border-radius:50%;background:linear-gradient(135deg,rgba(255,107,26,.15),rgba(255,200,74,.1));border:1px solid rgba(255,107,26,.3);display:flex;align-items:center;justify-content:center;animation:corePulse 2s ease-in-out infinite}
+.adov-orbit-ic{font-size:20px;line-height:1}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@keyframes corePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,107,26,.3)}50%{transform:scale(1.08);box-shadow:0 0 0 10px rgba(255,107,26,0)}}
+
+.adov-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;text-align:center;margin-bottom:6px;letter-spacing:-.3px}
+.adov-subtitle{font-size:13px;color:rgba(255,255,255,.4);text-align:center;font-family:'Inter',sans-serif;margin-bottom:28px;line-height:1.5}
+
+/* Step dots */
+.adov-steps{display:flex;gap:8px;margin-bottom:28px;align-items:center}
+.adov-s{width:32px;height:6px;border-radius:6px;background:rgba(255,255,255,.08);transition:all .4s cubic-bezier(.34,1.4,.64,1)}
+.adov-s.done{background:var(--green);width:32px}
+.adov-s.active{background:var(--yellow);width:44px;animation:stepPulse .9s ease-in-out infinite}
+.adov-s.skip{background:rgba(255,255,255,.2)}
+@keyframes stepPulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* Reward display */
+.adov-reward-wrap{background:rgba(255,200,74,.06);border:1px solid rgba(255,200,74,.15);border-radius:20px;padding:16px 32px;margin-bottom:32px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.adov-reward-lbl{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1.5px;font-family:'Inter',sans-serif;font-weight:600}
+.adov-reward-row{display:flex;align-items:baseline;gap:7px}
+.adov-reward{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--yellow);line-height:1}
+.adov-taka{font-family:'Hind Siliguri',sans-serif;font-size:16px;font-weight:700;color:var(--taka)}
+.adov-rsub{display:none}
+
+/* Waiting text + continue btn */
+.adov-waiting{font-size:12px;color:rgba(255,255,255,.35);font-family:'Hind Siliguri',sans-serif;display:none;text-align:center;margin-bottom:12px;line-height:1.7}
+.adov-waiting.show{display:block}
+.adov-continue{display:none;width:100%;max-width:320px;background:linear-gradient(135deg,var(--accent),#ff8c42);color:#fff;border:none;border-radius:16px;padding:17px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;letter-spacing:.3px;box-shadow:0 8px 28px rgba(255,107,26,.35);transition:transform .15s}
+.adov-continue.show{display:block}.adov-continue:active{transform:scale(.97)}
+
+/* WD loading */
 .adov-wd-loading{display:none;flex-direction:column;align-items:center;gap:16px;margin-top:8px}
 .adov-wd-loading.show{display:flex}
 .adov-wd-spinner{width:48px;height:48px;border:4px solid rgba(255,255,255,.1);border-top-color:var(--green);border-radius:50%;animation:sp .7s linear infinite}
 .adov-wd-txt{font-size:14px;color:var(--muted);font-family:'Inter',sans-serif}
-.adov-complete{text-align:center;padding:16px;display:none;flex-direction:column;align-items:center;gap:8px}
-.adov-complete.show{display:flex}
-.adov-complete-ic{font-size:48px;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
-.adov-complete-txt{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff}
-.adov-complete-sub{font-size:13px;color:var(--muted);font-family:'Inter',sans-serif}
+
+/* Complete (old, kept hidden) */
+.adov-complete{display:none!important}
 @keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
-.adov-preload{display:none;flex-direction:column;align-items:center;gap:14px;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:600;justify-content:center;}
-.adov-preload.show{display:flex}
-.adov-pre-spinner{width:44px;height:44px;border:3.5px solid rgba(255,255,255,.1);border-top-color:var(--accent);border-radius:50%;animation:sp .75s linear infinite}
-.adov-pre-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff}
-.adov-pre-sub{font-size:13px;color:var(--muted);font-family:'Inter',sans-serif;letter-spacing:.2px}
-.adov-pre-close{margin-top:6px;background:rgba(255,255,255,.08);border:1px solid var(--border);color:rgba(255,255,255,.6);border-radius:30px;padding:10px 32px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
-.adov-pre-close:active{transform:scale(.96)}
-.adov-pre-claim{margin-top:6px;background:linear-gradient(135deg,var(--green),#00c47a);border:none;color:#fff;border-radius:30px;padding:13px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;animation:popIn .35s cubic-bezier(.34,1.56,.64,1);letter-spacing:.2px}
-.adov-pre-claim:active{transform:scale(.96)}
-.adov-pre-ic{font-size:42px;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
 .adov-claim{margin-top:8px;background:linear-gradient(135deg,var(--green),#00c47a);color:#fff;border:none;border-radius:14px;padding:15px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;display:none;letter-spacing:.3px;animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
 .adov-claim.show{display:block}.adov-claim:active{transform:scale(.96)}
-.adov-waiting{font-size:12px;color:var(--muted);font-family:'Inter',sans-serif;display:none;text-align:center;line-height:1.7}
-.adov-waiting.show{display:block}
-.adov-continue{display:none;margin-top:10px;width:100%;background:linear-gradient(135deg,var(--accent),#ff8c42);color:#fff;border:none;border-radius:14px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.2px;animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
-.adov-continue.show{display:block}.adov-continue:active{transform:scale(.97)}
+
+/* ══ PRELOAD / CLAIM screen ══ */
+.adov-preload{display:none;flex-direction:column;align-items:center;position:fixed;inset:0;background:rgba(4,5,12,.98);z-index:600;justify-content:center;padding:40px 28px}
+.adov-preload.show{display:flex}
+
+/* Processing state */
+.adov-pre-spinner{width:52px;height:52px;border:3.5px solid rgba(255,255,255,.08);border-top-color:var(--accent);border-right-color:rgba(255,107,26,.4);border-radius:50%;animation:sp .8s linear infinite;margin-bottom:20px}
+.adov-pre-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;text-align:center}
+.adov-pre-sub{font-size:13px;color:rgba(255,255,255,.4);font-family:'Inter',sans-serif;letter-spacing:.2px;text-align:center;line-height:1.6;margin-bottom:28px}
+.adov-pre-close{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);border-radius:30px;padding:11px 32px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.adov-pre-close:active{transform:scale(.96)}
+
+/* ── Reward Added state (replaces old .adov-pre-ic + claim btn) ── */
+.adov-pre-ic{display:none}
+.adov-success-wrap{display:none;flex-direction:column;align-items:center;width:100%}
+.adov-success-wrap.show{display:flex}
+
+/* Coin burst */
+.adov-coin-anim{position:relative;width:110px;height:110px;margin-bottom:24px}
+.adov-coin-circle{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffe87a,#ffc200 55%,#e08800);display:flex;align-items:center;justify-content:center;font-family:'Hind Siliguri',sans-serif;font-size:38px;font-weight:800;color:rgba(0,0,0,.6);box-shadow:0 0 0 8px rgba(255,200,74,.15),0 0 0 20px rgba(255,200,74,.07),0 8px 32px rgba(255,180,0,.4);animation:coinDrop .6s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes coinDrop{0%{transform:scale(0) translateY(-30px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}
+
+/* Sparkle particles */
+.adov-sparks{position:absolute;inset:0;pointer-events:none}
+.adov-spark{position:absolute;width:6px;height:6px;border-radius:50%;animation:sparkFly .7s ease-out forwards}
+.adov-spark:nth-child(1){background:#ffd700;top:50%;left:50%;animation-delay:.05s;--tx:-55px;--ty:-40px}
+.adov-spark:nth-child(2){background:#ff6b1a;top:50%;left:50%;animation-delay:.1s;--tx:50px;--ty:-50px}
+.adov-spark:nth-child(3){background:#00e096;top:50%;left:50%;animation-delay:.08s;--tx:58px;--ty:20px}
+.adov-spark:nth-child(4){background:#ffc84a;top:50%;left:50%;animation-delay:.12s;--tx:-48px;--ty:28px}
+.adov-spark:nth-child(5){background:#fff;top:50%;left:50%;animation-delay:.06s;--tx:10px;--ty:-62px}
+.adov-spark:nth-child(6){background:#ff6b6b;top:50%;left:50%;animation-delay:.14s;--tx:-20px;--ty:60px}
+@keyframes sparkFly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
+
+.adov-success-amount{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:#fff;text-align:center;margin-bottom:4px;animation:fadeUp .5s .3s both ease-out}
+.adov-success-amount span{color:var(--yellow)}
+.adov-success-label{font-size:13px;color:rgba(255,255,255,.45);font-family:'Hind Siliguri',sans-serif;text-align:center;margin-bottom:8px;animation:fadeUp .5s .4s both ease-out}
+.adov-success-pill{background:rgba(0,224,150,.1);border:1px solid rgba(0,224,150,.25);border-radius:30px;padding:6px 18px;font-size:12px;font-weight:600;color:var(--green);font-family:'Inter',sans-serif;margin-bottom:0;animation:fadeUp .5s .5s both ease-out;letter-spacing:.3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.adov-pre-claim{display:none}
+
 
 /* Toast */
 .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(20,24,38,.97);border:1px solid rgba(255,107,26,.3);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.34,1.4,.64,1);backdrop-filter:blur(20px);white-space:nowrap;font-family:'Inter',sans-serif}
@@ -720,29 +776,59 @@ select.hk-fi option{background:#1a1d26}
 
 <!-- Ad overlay -->
 <div class="adov" id="adOverlay">
+  <!-- Preload / Success screen -->
   <div class="adov-preload" id="adovPreload">
     <div class="adov-pre-spinner" id="adovPreSpinner"></div>
     <div class="adov-pre-ic" id="adovPreIc" style="display:none">✅</div>
     <div class="adov-pre-title" id="adovPreTitle">Processing...</div>
     <div class="adov-pre-sub" id="adovPreSub">Starting ad session</div>
+    <!-- Success state -->
+    <div class="adov-success-wrap" id="adovSuccessWrap">
+      <div class="adov-coin-anim">
+        <div class="adov-sparks">
+          <div class="adov-spark"></div><div class="adov-spark"></div>
+          <div class="adov-spark"></div><div class="adov-spark"></div>
+          <div class="adov-spark"></div><div class="adov-spark"></div>
+        </div>
+        <div class="adov-coin-circle">৳</div>
+      </div>
+      <div class="adov-success-amount" id="adovSuccessAmt"><span>+৳ 0.00</span></div>
+      <div class="adov-success-label">Balance updated successfully</div>
+      <div class="adov-success-pill">✓ Added to your wallet</div>
+    </div>
     <button class="adov-pre-close" id="adovPreCloseBtn" onclick="adovPreClose()">Close</button>
     <button class="adov-pre-claim" id="adovPreClaimBtn" style="display:none" onclick="claimReward()">🎁 Claim Reward</button>
   </div>
-  <div id="adovMain" style="display:none;flex-direction:column;align-items:center;gap:10px;width:100%">
-    <div class="adov-type" id="adovType">📺 WATCH & EARN</div>
+
+  <!-- Main watching panel -->
+  <div id="adovMain" style="display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:100vh;padding:40px 28px;gap:0">
+    <!-- Orbit loader -->
+    <div class="adov-orbit">
+      <div class="adov-orbit-ring"></div>
+      <div class="adov-orbit-ring"></div>
+      <div class="adov-orbit-ring"></div>
+      <div class="adov-orbit-core"><div class="adov-orbit-ic">📺</div></div>
+    </div>
+
     <div class="adov-title" id="adovTitle">Watching Ads...</div>
+    <div class="adov-subtitle">বিজ্ঞাপন লোড হচ্ছে, একটু অপেক্ষা করুন</div>
     <div class="adov-step-lbl" id="adovStepLbl"></div>
     <div class="adov-steps" id="adovSteps"></div>
     <div class="adov-net-name" id="adovNetName"></div>
+
     <div class="adov-reward-wrap">
-      <div class="adov-reward" id="adovReward">0.50</div>
-      <div class="adov-taka">টাকা</div>
+      <div class="adov-reward-lbl">Reward</div>
+      <div class="adov-reward-row">
+        <div class="adov-reward" id="adovReward">0.50</div>
+        <div class="adov-taka">টাকা</div>
+      </div>
     </div>
-    <div class="adov-rsub" id="adovRSub">reward</div>
+
     <div class="adov-msg" id="adovMsg"></div>
     <div class="adov-status" id="adovStatus"></div>
     <div class="adov-waiting" id="adovWaiting">বিজ্ঞাপন দেখা হলে নিচের বাটনে ক্লিক করুন</div>
     <button class="adov-continue" id="adovContinue" onclick="onAdsterraBack()">▶️ Continue</button>
+
     <div class="adov-wd-loading" id="adovWdLoading">
       <div class="adov-wd-spinner"></div>
       <div class="adov-wd-txt">Processing your withdrawal...</div>
