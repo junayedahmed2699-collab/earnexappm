@@ -108,6 +108,28 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 .balsv{font-family:Arial,sans-serif;font-size:15px;font-weight:700;color:#fff}
 .bals-unit{font-size:10px;color:var(--taka);font-weight:700;font-family:'Hind Siliguri',sans-serif}
 .balsl{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px;font-family:'Inter',sans-serif}
+
+/* ── Quick Action Buttons ── */
+.qa-row{display:flex;gap:10px;margin-bottom:13px}
+.qa-btn{flex:1;border:none;border-radius:16px;padding:18px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all .2s;background:linear-gradient(135deg,var(--accent),#ff8c42)}
+.qa-btn.qa-green{background:linear-gradient(135deg,var(--green),#00b377)}
+.qa-btn:active{transform:scale(.96)}
+.qa-ic{font-size:26px;line-height:1}
+.qa-lbl{font-size:13px;font-weight:700;color:#fff;letter-spacing:.2px;font-family:'Hind Siliguri',sans-serif}
+
+/* ── Summary Section ── */
+.summary-sec{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;margin-bottom:13px}
+.summary-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:12px}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
+.sum-card{background:var(--bg3);border-radius:12px;padding:12px 6px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.sum-ic{font-size:18px;line-height:1}
+.sum-val{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#fff}
+.sum-lbl{font-size:9px;color:var(--muted);letter-spacing:.2px;line-height:1.3;font-family:'Hind Siliguri',sans-serif}
+
+/* ── Ad Rules ── */
+.ad-rules{background:rgba(255,200,74,.06);border:1px solid rgba(255,200,74,.18);border-radius:12px;padding:12px 14px;margin-bottom:12px;display:flex;flex-direction:column;gap:7px}
+.ad-rule-item{font-size:12px;color:rgba(255,255,255,.75);font-family:'Hind Siliguri',sans-serif;line-height:1.5}
+
 .wcard{background:linear-gradient(135deg,#0d1220,#131b2e);border-radius:20px;padding:20px;margin-bottom:13px;border:1px solid rgba(255,200,74,.2)}
 .wchd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .wctitle{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff}
@@ -331,15 +353,59 @@ select.fi option{background:#1a1d26}
       <div class="bals"><div class="balsv" id="sRef">0</div><div class="balsl" style="margin-top:12px">Referrals</div></div>
     </div>
   </div>
+
+  <!-- Quick Action Buttons -->
+  <div class="qa-row">
+    <button class="qa-btn" onclick="showPage('tasks',document.querySelectorAll('.ni')[1])">
+      <div class="qa-ic">⚡</div>
+      <div class="qa-lbl">কাজ শুরু করুন</div>
+    </button>
+    <button class="qa-btn qa-green" onclick="showPage('wallet',document.querySelectorAll('.ni')[4])">
+      <div class="qa-ic">💸</div>
+      <div class="qa-lbl">উত্তোলন</div>
+    </button>
+  </div>
+
+  <!-- Summary Section -->
+  <div class="summary-sec">
+    <div class="summary-title">📊 সারসংক্ষেপ</div>
+    <div class="summary-grid">
+      <div class="sum-card">
+        <div class="sum-ic">📺</div>
+        <div class="sum-val" id="sumAdsWatched">0</div>
+        <div class="sum-lbl">মোট বিজ্ঞাপন</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-ic">✅</div>
+        <div class="sum-val" id="sumTasksDone">0</div>
+        <div class="sum-lbl">সম্পন্ন টাস্ক</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-ic">🤝</div>
+        <div class="sum-val" id="sumRefs">0</div>
+        <div class="sum-lbl">রেফারেল</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-ic">📅</div>
+        <div class="sum-val" id="sumTodayAds">0</div>
+        <div class="sum-lbl">আজকের বিজ্ঞাপন</div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="page" id="page-tasks">
   <div class="pgt"><div class="pgtitle">Tasks</div></div>
   <div class="wcard">
     <div class="wchd"><div class="wctitle">📺 বিজ্ঞাপন দেখে আয় করুন</div><div class="wcrb" id="wcRB">+৳ 0.50</div></div>
-    <div class="wcinfo">
+    <div class="wcinfo" style="display:none">
       <div class="wcstat" style="display:none"><div class="wcsv" id="wcAds">0</div><div class="wcsl">Ads / session</div></div>
       <div class="wcstat"><div class="wcsv" id="wcToday">0</div><div class="wcsl">Watched today</div></div>
       <div class="wcstat"><div class="wcsv" id="wcLimit">5</div><div class="wcsl">Daily limit</div></div>
+    </div>
+    <div class="ad-rules">
+      <div class="ad-rule-item">📌 প্রতিদিন নির্দিষ্ট সংখ্যক বিজ্ঞাপন দেখা যাবে</div>
+      <div class="ad-rule-item">⏳ প্রতিটি বিজ্ঞাপনের পর কিছুক্ষণ অপেক্ষা করুন</div>
+      <div class="ad-rule-item">✅ বিজ্ঞাপন সম্পূর্ণ দেখলেই পুরস্কার পাবেন</div>
     </div>
     <button class="bigbtn watchbtn" id="watchBtn" onclick="startChain('watch')">▶ বিজ্ঞাপন দেখুন</button>
     <div class="cooldown-bar-wrap" id="cooldownBarWrap"><div class="cooldown-bar" id="cooldownBar" style="width:100%"></div></div>
@@ -750,14 +816,11 @@ function playSlot(){
     }catch(e){_next();}
 
   }else if(net.name==='monetag'){
-    // ── Monetag: show() প্রতিশ্রুতি দেয় না তাই setTimeout ব্যবহার করে advance ──
     if(!net.zoneId){_next();return;}
     try{
-      // Monetag এর show ad function (SDK load হলে window.show ফাংশন থাকে)
       if(typeof window.show==='function'){
         window.show().then(()=>_next()).catch(()=>_next());
       }else{
-        // SDK এখনো লোড না হলে 3 সেকেন্ড পরে advance
         setTimeout(()=>_next(),3000);
       }
     }catch(e){_next();}
@@ -768,7 +831,6 @@ function playSlot(){
       if(net.link){const tg=window.Telegram?.WebApp;if(tg)tg.openLink(net.link);else window.open(net.link,'_blank','noopener');}
       else if(net.script){const div=document.createElement('div');div.innerHTML=net.script;div.querySelectorAll('script').forEach(sc=>{const ns=document.createElement('script');if(sc.src){ns.src=sc.src;ns.async=true;}else ns.textContent=sc.textContent;document.body.appendChild(ns);});}
     }catch(e){}
-    // Adsterra direct link: user manually confirms after returning from ad
     _showContinueBtn();
 
   }else{_next();}
@@ -782,7 +844,6 @@ async function chainAllDone(){
   _hideContinueBtn();
   document.querySelectorAll('.adov-s').forEach(el=>{if(!el.classList.contains('skip'))el.className='adov-s done';});
   if(CS.type==='watch'){
-    // Switch back to preload card in "claim" state
     _hideMain();
     document.getElementById('adovPreSpinner').style.display='none';
     document.getElementById('adovPreIc').style.display='block';
@@ -872,6 +933,22 @@ function renderWdHist(items){const el=document.getElementById('wdHist');if(!item
 
 function updateProfile(){document.getElementById('uname').textContent=APP.userName;document.getElementById('uid').textContent='ID: '+APP.userId;const av=document.getElementById('uava');if(APP.userPhoto)av.innerHTML=`<img src="${APP.userPhoto}" alt="a">`;else av.textContent=APP.userName.charAt(0).toUpperCase();}
 
+function updateSummary(){
+  const today=new Date().toDateString();
+  const totalAds=APP.watchedAds.length;
+  const todayAds=APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length;
+  const tasksDone=APP.completedTasks.length;
+  const refs=APP.referrals.length;
+  const el1=document.getElementById('sumAdsWatched');
+  const el2=document.getElementById('sumTasksDone');
+  const el3=document.getElementById('sumRefs');
+  const el4=document.getElementById('sumTodayAds');
+  if(el1)el1.textContent=totalAds;
+  if(el2)el2.textContent=tasksDone;
+  if(el3)el3.textContent=refs;
+  if(el4)el4.textContent=todayAds;
+}
+
 function updateUI(){
   const refCount=APP.referrals.length;
   document.getElementById('hbal').textContent=APP.balance.toFixed(2);
@@ -883,7 +960,7 @@ function updateUI(){
   document.getElementById('rCoins').textContent=`৳${(refCount*(APP.settings.referralBonus||5)).toFixed(2)}`;
   document.getElementById('rActive').textContent=refCount;
   document.getElementById('rLink').textContent=`https://t.me/${APP.settings.botUsername||'YourBot'}?start=${APP.referralCode}`;
-  renderRefList();renderTasks();
+  renderRefList();renderTasks();updateSummary();
 }
 
 function showPage(p,el){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.ni').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p).classList.add('active');el.classList.add('active');}
