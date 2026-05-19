@@ -260,6 +260,9 @@ select.fi option{background:#1a1d26}
 .adov-claim:active{transform:scale(.96)}
 .adov-waiting{font-size:12px;color:var(--muted);font-family:'Inter',sans-serif;display:none;text-align:center;line-height:1.7}
 .adov-waiting.show{display:block}
+.adov-continue{display:none;margin-top:10px;width:100%;background:linear-gradient(135deg,var(--accent),#ff8c42);color:#fff;border:none;border-radius:14px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.2px;animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
+.adov-continue.show{display:block}
+.adov-continue:active{transform:scale(.97)}
 .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:rgba(20,24,38,.97);border:1px solid rgba(255,107,26,.3);color:#fff;padding:12px 20px;border-radius:30px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.34,1.4,.64,1);backdrop-filter:blur(20px);white-space:nowrap;font-family:'Inter',sans-serif}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .empty{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px;font-family:'Inter',sans-serif}
@@ -455,8 +458,8 @@ select.fi option{background:#1a1d26}
     <div class="adov-rsub" id="adovRSub">reward</div>
     <div class="adov-msg" id="adovMsg"></div>
     <div class="adov-status" id="adovStatus"></div>
-    <div class="adov-waiting" id="adovWaiting" style="display:none!important"></div>
-    <button class="adov-continue" id="adovContinue" style="display:none!important" onclick="onAdsterraBack()">✅ বিজ্ঞাপন দেখা হয়েছে</button>
+    <div class="adov-waiting" id="adovWaiting">বিজ্ঞাপন দেখা হয়েছে? নিচের বাটনে ক্লিক করুন</div>
+    <button class="adov-continue" id="adovContinue" onclick="onAdsterraBack()">▶️ Continue</button>
     <div class="adov-wd-loading" id="adovWdLoading">
       <div class="adov-wd-spinner"></div>
       <div class="adov-wd-txt">Processing your withdrawal...</div>
@@ -765,7 +768,8 @@ function playSlot(){
       if(net.link){const tg=window.Telegram?.WebApp;if(tg)tg.openLink(net.link);else window.open(net.link,'_blank','noopener');}
       else if(net.script){const div=document.createElement('div');div.innerHTML=net.script;div.querySelectorAll('script').forEach(sc=>{const ns=document.createElement('script');if(sc.src){ns.src=sc.src;ns.async=true;}else ns.textContent=sc.textContent;document.body.appendChild(ns);});}
     }catch(e){}
-    setTimeout(()=>_next(),1000);
+    // Adsterra direct link: user manually confirms after returning from ad
+    _showContinueBtn();
 
   }else{_next();}
 }
