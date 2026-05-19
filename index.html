@@ -314,7 +314,7 @@ select.hk-fi option{background:#1a1d26}
 }
 .hk-wd-submit.locked{
   background:linear-gradient(135deg,#6b1a3a,#8c2250);
-  color:rgba(255,255,255,0.7);pointer-events:none;
+  color:rgba(255,255,255,0.7);
 }
 .hk-wd-submit.active-wd{
   background:linear-gradient(135deg,var(--green),#00b377);color:#fff;
@@ -677,9 +677,9 @@ select.hk-fi option{background:#1a1d26}
     </div>
 
     <!-- Submit / locked button -->
-    <button class="hk-wd-submit locked" id="wdBtn" onclick="handleWithdraw()">
-      <span class="hk-lock-ic">🔒</span>
-      <span id="wdBtnTxt">অপশনটি লক করা আছে</span>
+    <button class="hk-wd-submit active-wd" id="wdBtn" onclick="handleWithdraw()">
+      <span class="hk-lock-ic">💸</span>
+      <span id="wdBtnTxt">Withdraw Now →</span>
     </button>
     <div class="wd-ad-info" id="wdAdInfo" style="display:none"></div>
   </div>
@@ -794,21 +794,12 @@ function updateRing(done,total){
 
 /* ── Withdraw button state ── */
 function updateWdButton(){
-  const wallet=document.getElementById('wdWallet').value;
-  const account=document.getElementById('wdAcc').value.trim();
-  const amount=parseFloat(document.getElementById('wdAmt').value)||0;
-  const minWd=APP.settings.minWithdraw||50;
   const btn=document.getElementById('wdBtn');
   const txt=document.getElementById('wdBtnTxt');
-  if(wallet&&account&&amount>=minWd&&amount<=APP.balance){
-    btn.className='hk-wd-submit active-wd';
-    txt.textContent='Withdraw Now →';
-    btn.querySelector('.hk-lock-ic').textContent='💸';
-  }else{
-    btn.className='hk-wd-submit locked';
-    txt.textContent='অপশনটি লক করা আছে';
-    btn.querySelector('.hk-lock-ic').textContent='🔒';
-  }
+  btn.className='hk-wd-submit active-wd';
+  btn.disabled=false;
+  txt.textContent='Withdraw Now →';
+  btn.querySelector('.hk-lock-ic').textContent='💸';
 }
 
 window.addEventListener('DOMContentLoaded',async()=>{
@@ -1137,7 +1128,6 @@ async function claimReward(){
 }
 
 function updateWdBtn(){
-  /* Keep old logic intact — just resets to locked state on settings refresh */
   document.getElementById('wdAdInfo').style.display='none';
   updateWdButton();
 }
