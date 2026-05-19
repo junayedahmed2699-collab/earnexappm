@@ -254,8 +254,6 @@ select.fi option{background:#1a1d26}
 .adov-pre-close:active{transform:scale(.96)}
 .adov-pre-claim{margin-top:6px;background:linear-gradient(135deg,var(--green),#00c47a);border:none;color:#fff;border-radius:30px;padding:13px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;animation:popIn .35s cubic-bezier(.34,1.56,.64,1);letter-spacing:.2px}
 .adov-pre-claim:active{transform:scale(.96)}
-.adov-pre-continue{margin-top:6px;background:linear-gradient(135deg,var(--accent),#ff8c42);border:none;color:#fff;border-radius:30px;padding:13px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;animation:popIn .35s cubic-bezier(.34,1.56,.64,1);letter-spacing:.2px}
-.adov-pre-continue:active{transform:scale(.96)}
 .adov-pre-ic{font-size:42px;animation:popIn .4s cubic-bezier(.34,1.56,.64,1)}
 .adov-claim{margin-top:8px;background:linear-gradient(135deg,var(--green),#00c47a);color:#fff;border:none;border-radius:14px;padding:15px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;display:none;letter-spacing:.3px;animation:popIn .3s cubic-bezier(.34,1.56,.64,1)}
 .adov-claim.show{display:block}
@@ -445,7 +443,6 @@ select.fi option{background:#1a1d26}
     <div class="adov-pre-title" id="adovPreTitle">Processing...</div>
     <div class="adov-pre-sub" id="adovPreSub">Starting ad session</div>
     <button class="adov-pre-close" id="adovPreCloseBtn" onclick="adovPreClose()">Close</button>
-    <button class="adov-pre-continue" id="adovPreContinueBtn" style="display:none" onclick="onAdsterraPreContinue()">▶️ Continue</button>
     <button class="adov-pre-claim" id="adovPreClaimBtn" style="display:none" onclick="claimReward()">🎁 Claim Reward</button>
   </div>
   <div id="adovMain" style="display:none;flex-direction:column;align-items:center;gap:10px;width:100%">
@@ -672,7 +669,6 @@ function _resetPreload(){
   document.getElementById('adovPreTitle').textContent='Processing...';
   document.getElementById('adovPreSub').textContent='Starting ad session';
   document.getElementById('adovPreCloseBtn').style.display='';
-  document.getElementById('adovPreContinueBtn').style.display='none';
   document.getElementById('adovPreClaimBtn').style.display='none';
   document.getElementById('adovPreClaimBtn').disabled=false;
   document.getElementById('adovPreClaimBtn').textContent='🎁 Claim Reward';
@@ -728,9 +724,8 @@ function startChain(type,wdData=null){
 // ── SLOT ENGINE ──
 let _slotAdvanced=false;
 function adovPreClose(){document.getElementById('adOverlay').classList.remove('open');document.getElementById('adovPreload').classList.remove('show');_resetPreload();_hideMain();CS={active:false,type:null,queue:[],idx:0,total:0,reward:0,done:false,wdData:null};}
-function _showContinueBtn(){document.getElementById('adovPreCloseBtn').style.display='none';document.getElementById('adovPreContinueBtn').style.display='block';}
-function _hideContinueBtn(){document.getElementById('adovPreCloseBtn').style.display='';document.getElementById('adovPreContinueBtn').style.display='none';}
-function onAdsterraPreContinue(){_hideContinueBtn();_next();}
+function _showContinueBtn(){document.getElementById('adovWaiting').classList.add('show');document.getElementById('adovContinue').classList.add('show');}
+function _hideContinueBtn(){document.getElementById('adovWaiting').classList.remove('show');document.getElementById('adovContinue').classList.remove('show');}
 function onAdsterraBack(){_hideContinueBtn();_next();}
 
 function _next(){
