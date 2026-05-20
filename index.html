@@ -789,7 +789,7 @@ select.hk-fi option{background:#1a1d26}
     <!-- Main watch button -->
     <button class="hk-watch-btn" id="watchBtn" onclick="startChain('watch')">
       <div class="btn-play-ic">▶</div>
-      <span id="watchBtnTxt">অ্যাড দেখুন</span><span id="watchBtnSec" style="display:none">20</span>
+      <span id="watchBtnTxt">অ্যাড দেখুন (<span id="watchBtnSec">20</span> সেকেন্ড)</span>
     </button>
     <div class="hk-cooldown-bar-wrap" id="cooldownBarWrap">
       <div class="hk-cooldown-bar" id="cooldownBar" style="width:100%"></div>
@@ -1160,7 +1160,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
       /* Update reward label in tasks header */
       const reward=APP.settings.watchChain?.reward||0.5;
       const el=document.getElementById('hkRewardLbl');
-      if(el)el.textContent=reward.toFixed(2); /* show actual taka amount */
+      if(el)el.textContent=(reward*100).toFixed(0); /* show as paisa or custom */
 
       /* Update cooldown seconds in button */
       const secs=APP.settings.watchChain?.cooldownSec||20;
@@ -1277,7 +1277,7 @@ function clearCooldownUI(){
   if(isDailyLimitReached()){btn.disabled=true;btn.className='hk-watch-btn limit-done';btn.innerHTML=`<div class="btn-play-ic">✅</div><span>আজকের কাজ শেষ!</span>`;return;}
   btn.disabled=false;btn.className='hk-watch-btn';
   const secs=APP.settings.watchChain?.cooldownSec||20;
-  btn.innerHTML=`<div class="btn-play-ic">▶</div><span>অ্যাড দেখুন</span>`;
+  btn.innerHTML=`<div class="btn-play-ic">▶</div><span>অ্যাড দেখুন (${secs} সেকেন্ড)</span>`;
 }
 function isDailyLimitReached(){const limit=APP.settings.watchChain?.dailyLimit||5;const today=new Date().toDateString();return APP.watchedAds.filter(w=>w.type==='watch_chain'&&new Date(w.date).toDateString()===today).length>=limit;}
 
