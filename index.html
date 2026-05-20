@@ -992,11 +992,11 @@ select.hk-fi option{background:#1a1d26}
         <div class="adov-eye-center">📺</div>
       </div>
 
-      <div class="adov-watching-label" id="adovTitle">Watching Ads...</div>
+      <div class="adov-watching-label" id="adovTitle" style="display:none">Watching Ads...</div>
       <div class="adov-watching-sub">বিজ্ঞাপন চলছে, অপেক্ষা করুন</div>
 
-      <!-- Step indicators -->
-      <div class="adov-steps" id="adovSteps"></div>
+      <!-- Step indicators (hidden) -->
+      <div class="adov-steps" id="adovSteps" style="display:none!important"></div>
 
       <!-- Hidden (kept for JS) -->
       <div class="adov-type" id="adovType"></div>
@@ -1327,13 +1327,13 @@ function startChain(type,wdData=null){
   document.getElementById('adOverlay').classList.add('open');
   const typeEl=document.getElementById('adovType');const msg=document.getElementById('adovMsg');
   document.querySelector('.adov-reward-wrap').style.display='';
-  document.getElementById('adovSteps').style.display='';
+  document.getElementById('adovSteps').style.display='none';
   document.getElementById('adovRSub').style.display='';
   if(type==='watch'){
     typeEl.textContent='📺 WATCH & EARN';typeEl.className='adov-type watch';
     document.getElementById('adovReward').textContent=CS.reward.toFixed(2);
     document.getElementById('adovRSub').textContent='reward';
-    document.getElementById('adovSteps').style.display='flex';
+    document.getElementById('adovSteps').style.display='none';
     msg.style.display='none';
   }else{
     document.querySelector('.adov-reward-wrap').style.display='none';
